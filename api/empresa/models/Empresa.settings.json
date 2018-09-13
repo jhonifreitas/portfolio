@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "company",
+  "info": {
+    "name": "empresa",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "maxLength": 255,
+      "type": "string",
+      "required": true
+    }
+  }
+}
