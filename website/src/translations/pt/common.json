@@ -1,0 +1,9 @@
+{
+    "Header": {
+        "home": "início",
+        "about": "sobre",
+        "service": "serviço",
+        "portfolio": "portfólio",
+        "contact": "contato"
+    }
+}

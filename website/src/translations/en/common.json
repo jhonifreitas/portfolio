@@ -1,0 +1,9 @@
+{
+    "Header": {
+        "home": "home",
+        "about": "about",
+        "service": "service",
+        "portfolio": "portfolio",
+        "contact": "contact"
+    }
+}

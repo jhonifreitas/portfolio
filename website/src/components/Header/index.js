@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles.css'
+import { translate } from 'react-i18next'
 
 class Header extends React.Component {
   render() {
@@ -14,19 +15,19 @@ class Header extends React.Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ml-md-auto">
                 <li className="nav-item current">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#top">Home <span className="sr-only">(current)</span></a>
+                  <a className="nav-link text-dark px-4 text-uppercase" href="#top">{ this.props.t('Header.home') }</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#about">About</a>
+                  <a className="nav-link text-dark px-4 text-uppercase" href="#about">{ this.props.t('Header.about') }</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#service">Service</a>
+                  <a className="nav-link text-dark px-4 text-uppercase" href="#service">{ this.props.t('Header.service') }</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#portfolio">Portfolio</a>
+                  <a className="nav-link text-dark px-4 text-uppercase" href="#portfolio">{ this.props.t('Header.portfolio') }</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#contact">Contact</a>
+                  <a className="nav-link text-dark px-4 text-uppercase" href="#contact">{ this.props.t('Header.contact') }</a>
                 </li>
               </ul>
             </div>
@@ -37,4 +38,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+export default translate('common')(Header)
