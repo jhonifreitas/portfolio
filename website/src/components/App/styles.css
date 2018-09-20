@@ -1,0 +1,30 @@
+*{
+    font-family: 'Cormorant', serif;
+}
+
+/* COLORS */
+.text-dark{
+    color: #212121 !important;
+}
+.text-dark-light{
+    color: #4d4d4d !important;
+}
+.text-gray{
+    color: #959595 !important;
+}
+
+/* FONTS */
+.h1, h1{
+    font-size: 3rem;
+}
+.h4, h4{
+    font-size: 1.4rem;
+}
+
+/* FONT WEIGHT */
+.font-weight-medium{
+    font-weight: 500;
+}
+.font-weight-semi-bold{
+    font-weight: 600;
+}

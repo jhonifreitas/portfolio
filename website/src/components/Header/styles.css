@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1170px;
+    }
+}
+
+.navbar-brand{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
+
+.nav-item * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.nav-link {
+  position: relative;
+}
+.nav-link:before,
+.nav-link:after {
+  content: '';
+  opacity: 0;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.nav-link:before {
+  left: 0;
+  top: 0;
+  border-left: 3px solid #212121;
+  border-top: 3px solid #212121;
+  -webkit-transform: translate(100%, 50%);
+  transform: translate(100%, 50%);
+}
+.nav-link:after {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid #212121;
+  border-bottom: 3px solid #212121;
+  -webkit-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+.nav-link:hover,
+.nav-item.current .nav-link {
+  font-weight: bold;
+}
+.nav-link:hover:before,
+.nav-item.current .nav-link:before,
+.nav-link:hover:after,
+.nav-item.current .nav-link:after {
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
+}
