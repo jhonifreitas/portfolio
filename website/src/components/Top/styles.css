@@ -1,7 +1,7 @@
-.row{
+#top .row{
     height: 100vh;
 }
-section{
+#top{
     background: linear-gradient(to right, #fff, 50%, #e1e1e1 50%);
 }
 
@@ -12,9 +12,9 @@ section{
 }
 .box-left{
     left: 0;
-    top: 20%;
+    top: 15%;
     width: 25%;
-    height: 60%;
+    height: 70%;
     border-left: none;
 }
 .box-right{

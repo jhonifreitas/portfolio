@@ -5,5 +5,10 @@
         "service": "serviço",
         "portfolio": "portfólio",
         "contact": "contato"
+    },
+    "Top": {
+    	"my_job": "Desenvolvedor Full Stack",
+    	"hire_me": "Contrate-me",
+    	"explore_more": "Veja mais"
     }
 }

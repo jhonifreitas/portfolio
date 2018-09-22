@@ -15,19 +15,19 @@ class Header extends React.Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ml-md-auto">
                 <li className="nav-item current">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#top">{ this.props.t('Header.home') }</a>
+                  <a className="nav-link text-dark px-3 text-uppercase" href="#top">{ this.props.t('Header.home') }</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#about">{ this.props.t('Header.about') }</a>
+                  <a className="nav-link text-dark px-3 text-uppercase" href="#about">{ this.props.t('Header.about') }</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#service">{ this.props.t('Header.service') }</a>
+                  <a className="nav-link text-dark px-3 text-uppercase" href="#service">{ this.props.t('Header.service') }</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#portfolio">{ this.props.t('Header.portfolio') }</a>
+                  <a className="nav-link text-dark px-3 text-uppercase" href="#portfolio">{ this.props.t('Header.portfolio') }</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-dark px-4 text-uppercase" href="#contact">{ this.props.t('Header.contact') }</a>
+                  <a className="nav-link text-dark px-3 text-uppercase" href="#contact">{ this.props.t('Header.contact') }</a>
                 </li>
               </ul>
             </div>

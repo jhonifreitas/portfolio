@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles.css'
+import { translate } from 'react-i18next'
 
 import Button from '../Button'
 
@@ -16,11 +17,11 @@ class Top extends React.Component {
             <div className="col-md-6 align-self-center">
               <div className="px-3">
                 <h1 className="mb-0 font-weight-bold">Jonathan Freitas</h1>
-                <h4 className="font-weight-normal">Full Stack Developer</h4>
+                <h4 className="font-weight-normal">{ this.props.t('Top.my_job') }</h4>
 
                 <div className="mt-4">
-                  <Button className="mr-4 px-5 btn-dark" link="#">Hire me</Button>
-                  <Button className="px-4 btn-outline-dark" link="#">Explore more</Button>
+                  <Button className="mr-3 px-4 btn-dark" link="#">{ this.props.t('Top.hire_me') }</Button>
+                  <Button className="px-4 btn-outline-dark" link="#">{ this.props.t('Top.explore_more') }</Button>
                 </div>
               </div>
             </div>
@@ -34,4 +35,4 @@ class Top extends React.Component {
   }
 }
 
-export default Top
+export default translate('common')(Top)

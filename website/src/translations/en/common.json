@@ -5,5 +5,10 @@
         "service": "service",
         "portfolio": "portfolio",
         "contact": "contact"
+    },
+    "Top": {
+    	"my_job": "Full Stack Developer",
+    	"hire_me": "Hire me",
+    	"explore_more": "Explore more"
     }
 }

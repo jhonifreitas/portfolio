@@ -11,7 +11,7 @@ class Button extends React.Component {
 
     return (
       <a
-        className={`btn rounded-0 py-3 text-uppercase font-weight-medium ${ this.className }`}
+        className={`btn rounded-0 text-uppercase font-weight-medium ${ this.className }`}
         href={`${ this.props.link }`}
         role="button"
       >{ this.props.children }</a>

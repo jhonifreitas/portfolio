@@ -3,6 +3,7 @@ import './styles.css'
 
 import Header from '../Header'
 import Top from '../Top'
+import About from '../About'
 import Footer from '../Footer'
 
 
@@ -12,6 +13,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Top />
+        <About />
         <Footer />
       </div>
     )
