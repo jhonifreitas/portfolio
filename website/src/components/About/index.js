@@ -10,14 +10,19 @@ class About extends React.Component {
       <section id="about" className="pt-5">
         <div className="container">
           <div className="row mb-5">
-            <div className="col-md-12 text-center">
-              <h2 className="mb-0 text-uppercase">About</h2>
+            <div className="col-md-12 text-center title">
+              <h2 className="mb-0 text-uppercase">{ this.props.t('About.title') }</h2>
+              <div className="line">
+                <span></span>
+                <span className="small"></span>
+                <span></span>
+              </div>
             </div>
           </div>
           <div className="row">
             <div className="col-md-6 offset-md-3 text-center">
-              <p className="mb-4">Hello! I'm MUNTASIR, a full stuck developer, a Ruby enthusiast, and a guy slighty obsessed for code quality. Also I'm a co-founder of pykod.com. I’m currently available for freelance work. If you have a project that you want to get started or think you need my help with something, then get in touch.</p>
-              <Button className="px-4 btn-dark" link="#">Download my cv</Button>
+              <p className="mb-4">{ this.props.t('About.text') }</p>
+              <Button className="px-4 btn-dark" link="#">{ this.props.t('About.button') }</Button>
             </div>
           </div>
         </div>

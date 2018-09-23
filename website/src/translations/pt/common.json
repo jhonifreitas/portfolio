@@ -10,5 +10,10 @@
     	"my_job": "Desenvolvedor Full Stack",
     	"hire_me": "Contrate-me",
     	"explore_more": "Veja mais"
+    },
+    "About": {
+        "title": "Sobre",
+        "text": "Hello! I'm Jonathan, a full stuck developer, a Ruby enthusiast, and a guy slighty obsessed for code quality. Also I'm a co-founder of pykod.com. I’m currently available for freelance work. If you have a project that you want to get started or think you need my help with something, then get in touch.",
+        "button": "Baixe meu cv"
     }
 }
