@@ -2,10 +2,45 @@ import React from 'react'
 import './styles.scss'
 import { translate } from 'react-i18next'
 
+const debounce = (func, wait) => {
+  let timeout
+  return (...args) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func.apply(this, args), wait)
+  }
+}
+
 class Header extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      scrollPositionY: 0,
+    }
+  }
+
+  componentDidMount() {
+    // 32 is the number of milliseconds to debounce
+    // I picked this because it's approx 1 frame (ie: 16.7ms)
+    // You'll want to modulate that to your taste.
+    // Add console.logs in handleScroll function to check if its flooding.
+    return window.addEventListener('scroll', debounce(this.handleScroll, 16))
+  }
+
+  componentWillUnmount() {
+    return window.removeEventListener('scroll', debounce(this.handleScroll, 16))
+  }
+
+  handleScroll = () => {
+    // + is unary operator, same as Number(window.scrollY)
+    const scrollPositionY = +window.scrollY
+    return this.setState({ scrollPositionY })
+  }
+
   render() {
+    const isScrolling = !!this.state.scrollPositionY
     return (
-      <header>
+      <header className={(isScrolling) ? 'scrolling' : ''}>
         <nav className="navbar navbar-expand-lg navbar-light bg-transparent py-4 fixed-top">
           <div className="container px-0">
             <a className="navbar-brand font-weight-bold text-dark" href="#top">mejf.</a>
