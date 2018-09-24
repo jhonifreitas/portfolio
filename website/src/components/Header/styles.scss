@@ -17,7 +17,7 @@ nav{
     padding: 1rem 1.5rem !important;
     box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.15);
   }
-  a{
+  a, a:hover{
     color: #FFF !important;
     &:before, &:after{
       border-color: #FFF !important;

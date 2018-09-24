@@ -4,7 +4,12 @@
     font-family: 'Cormorant', serif;
 }
 
-/* COLORS */
+// BG COLOR
+.bg-dark{
+    background-color: $dark !important;
+}
+
+// COLORS
 .text-dark{
     color: $dark !important;
 }
@@ -15,7 +20,7 @@
     color: $gray !important;
 }
 
-/* FONTS */
+// FONTS
 .h1, h1{
     font-size: 3rem;
 }
@@ -23,10 +28,24 @@
     font-size: 1.4rem;
 }
 
-/* FONT WEIGHT */
+// FONT WEIGHT
 .font-weight-medium{
     font-weight: 500;
 }
 .font-weight-semi-bold{
     font-weight: 600;
+}
+
+
+.title {
+    .line > span{
+        height: 2px;
+        width: 30px;
+        display: block;
+        margin: 0 1px;
+        background-color: $dark;
+    }
+    .line > span.small{
+        width: 8px;
+    }
 }

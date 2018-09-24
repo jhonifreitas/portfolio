@@ -7,7 +7,7 @@ import Button from '../Button'
 class Top extends React.Component {
   render() {
     return (
-      <section id="Top">
+      <section id="Top" className="mb-5">
         <div className="container">
 
           <div className="box-left d-none d-md-block"></div>
