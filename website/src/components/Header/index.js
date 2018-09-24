@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.css'
+import './styles.scss'
 import { translate } from 'react-i18next'
 
 class Header extends React.Component {

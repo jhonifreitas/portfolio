@@ -1,16 +1,18 @@
+@import './variables.scss';
+
 *{
     font-family: 'Cormorant', serif;
 }
 
 /* COLORS */
 .text-dark{
-    color: #212121 !important;
+    color: $dark !important;
 }
 .text-dark-light{
-    color: #4d4d4d !important;
+    color: $dark-light !important;
 }
 .text-gray{
-    color: #959595 !important;
+    color: $gray !important;
 }
 
 /* FONTS */

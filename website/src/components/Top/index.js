@@ -1,14 +1,13 @@
 import React from 'react'
-import styles from './styles.scss'
+import './styles.scss'
 import { translate } from 'react-i18next'
 
 import Button from '../Button'
 
 class Top extends React.Component {
   render() {
-    console.log(styles)
     return (
-      <section className="{ styles.bg }">
+      <section id="Top">
         <div className="container">
 
           <div className="box-left d-none d-md-block"></div>

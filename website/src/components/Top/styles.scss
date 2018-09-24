@@ -1,27 +1,26 @@
-#top .row{
-    height: 100vh;
-}
-.bg{
+#Top {
     background: linear-gradient(to right, #fff, 50%, #e1e1e1 50%);
-}
-
-.box-left,
-.box-right{
-    position: absolute;
-    border: 17.25px solid #e8e8e8;
-}
-.box-left{
-    left: 0;
-    top: 15%;
-    width: 25%;
-    height: 70%;
-    border-left: none;
-}
-.box-right{
-    top: 25%;
-    right: 0;
-    width: 15%;
-    height: 50%;
-    border-right: none;
-    border-color: #ffffff;
+    .row{
+        height: 100vh;
+    }
+    .box-left,
+    .box-right{
+        position: absolute;
+        border: 17.25px solid #e8e8e8;
+    }
+    .box-left{
+        left: 0;
+        top: 15%;
+        width: 25%;
+        height: 70%;
+        border-left: none;
+    }
+    .box-right{
+        top: 25%;
+        right: 0;
+        width: 15%;
+        height: 50%;
+        border-right: none;
+        border-color: #ffffff;
+    }
 }

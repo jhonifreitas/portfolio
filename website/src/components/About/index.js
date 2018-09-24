@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.css'
+import './styles.scss'
 import { translate } from 'react-i18next'
 
 import Button from '../Button'
@@ -7,15 +7,19 @@ import Button from '../Button'
 class About extends React.Component {
   render() {
     return (
-      <section id="about" className="pt-5">
+      <section id="About" className="pt-5">
         <div className="container">
-          <div className="row mb-5">
+          <div className="row mb-4">
             <div className="col-md-12 text-center title">
-              <h2 className="mb-0 text-uppercase">{ this.props.t('About.title') }</h2>
-              <div className="line">
+              <h2 className="mb-1 text-uppercase">{ this.props.t('About.title') }</h2>
+              <div className="line d-flex justify-content-center py-1">
                 <span></span>
                 <span className="small"></span>
                 <span></span>
+              </div>
+              <div className="line d-flex justify-content-center">
+                <span></span>
+                <span className="small"></span>
               </div>
             </div>
           </div>
