@@ -21,5 +21,8 @@
     },
     "Service": {
         "title": "What i do"
+    },
+    "Portfolio": {
+        "title": "My recent works"
     }
 }

@@ -6,8 +6,12 @@ import { translate } from 'react-i18next'
 class Box extends React.Component {
   render(){
     return (
-      <div className>
-
+      <div className="col-md-4 col-sm-6 col-12">
+        <div className="px-4 text-center">
+          <i className={`${ this.props.icon } fa-3x`}></i>
+          <h3 className="my-3">{ this.props.title }</h3>
+          <p className="mb-0">{ this.props.text }</p>
+        </div>
       </div>
     )
   }
@@ -16,8 +20,8 @@ class Box extends React.Component {
 class Service extends React.Component {
   render() {
     return (
-      <section id="Service" className="py-5 mb-5">
-        <div className="card">
+      <section id="Service" className="pb-5 mb-5">
+        <div className="card rounded-0">
           <div className="container">
             <div className="row mb-5">
               <div className="col-md-12 text-center title">
@@ -34,6 +38,9 @@ class Service extends React.Component {
               </div>
             </div>
             <div className="row">
+              <Box icon="fas fa-desktop" title="Front-end" text="As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript MVC frameworks such as angular" />
+              <Box icon="fas fa-code" title="Back-end" text="As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript MVC frameworks such as angular" />
+              <Box icon="fab fa-hubspot" title="Consultancy" text="As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript MVC frameworks such as angular" />
             </div>
           </div>
         </div>
