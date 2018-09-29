@@ -24,6 +24,14 @@
     },
     "Portfolio": {
         "title": "My recent works",
-        "button": "Load more"
+        "button": "Load more",
+        "year_experience": "Years Experience",
+        "projects_delivered": "Projects Delivered"
+    },
+    "Contact": {
+        "title": "Contact"
+    },
+    "Footer": {
+        "all_rights": "2018. All Rights Reserved"
     }
 }

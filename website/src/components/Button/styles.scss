@@ -1,13 +1,15 @@
 @import '../App/variables.scss';
 
-.btn{
+.btn {
 	padding: .8rem 0;
     box-shadow: 0px 10px 18px rgba(0,0,0,0.15);
 }
-.btn-outline-dark{
+.btn-outline-dark,
+.btn-dark:hover{
 	background-color: #FFF;
+	color: $dark;
 }
 .btn-dark,
-.btn-outline-dark:hover{
+.btn-outline-dark:hover {
     background-color: $dark;
 }

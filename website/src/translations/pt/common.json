@@ -24,6 +24,14 @@
     },
     "Portfolio": {
         "title": "Meus Projetos",
-        "button": "Mostrar mais"
+        "button": "Mostrar mais",
+        "year_experience": "Anos de Experiência",
+        "projects_delivered": "Projetos Realizados"
+    },
+    "Contact": {
+        "title": "Contato"
+    },
+    "Footer": {
+        "all_rights": "2018. Todos os Direitos Reservados"
     }
 }

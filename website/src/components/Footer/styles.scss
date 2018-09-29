@@ -1,0 +1,9 @@
+Footer {
+	.go-up {
+		padding: .5rem 1rem;
+		transition: all .5s;
+		&:hover{
+			transform: scale(1.1);
+		}
+	}
+}
