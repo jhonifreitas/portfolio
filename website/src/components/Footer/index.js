@@ -2,14 +2,16 @@ import React from 'react'
 import './styles.scss'
 import { translate } from 'react-i18next'
 
+import Social from '../Social'
+
 class Footer extends React.Component {
   render() {
     return (
-      <footer className="bg-dark py-5 mt-5">
+      <footer className="bg-dark py-5">
       	<div className="container">
       		<div className="row align-items-center">
       			<div className="col">
-      				<a className="navbar-brand font-weight-bold text-light" href="#top">mejf.</a>
+      				<Social />
       			</div>
       			<div className="col text-center text-light">
       				<h5 className="mb-0">{ this.props.t('Footer.all_rights') }</h5>

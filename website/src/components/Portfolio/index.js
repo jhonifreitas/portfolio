@@ -36,7 +36,7 @@ class Counter extends React.Component {
 class Portfolio extends React.Component {
   render() {
     return (
-      <section id="Portfolio"  className="pb-5 mb-5">
+      <section id="Portfolio">
         <div className="container">
           <div className="row mb-5">
             <div className="col-md-12">

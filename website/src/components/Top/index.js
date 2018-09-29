@@ -3,6 +3,7 @@ import './styles.scss'
 import { translate } from 'react-i18next'
 
 import Button from '../Button'
+import Social from '../Social'
 
 class Top extends React.Component {
   render() {
@@ -25,8 +26,10 @@ class Top extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
-
+            <div className="col-md-6 align-self-center text-center">
+              <img src="/assets/images/photo.png" className="rounded-circle w-25" alt="" title="Photo" />
+              <h3 className="font-weight-bold my-2">{ this.props.t('Top.contact') }</h3>
+              <Social />
             </div>
           </div>
         </div>

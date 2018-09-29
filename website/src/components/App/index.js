@@ -7,7 +7,6 @@ import About from '../About'
 import Skill from '../Skill'
 import Service from '../Service'
 import Portfolio from '../Portfolio'
-import Contact from '../Contact'
 import Footer from '../Footer'
 
 
@@ -21,7 +20,6 @@ class App extends React.Component {
         <Skill />
         <Service />
         <Portfolio />
-        <Contact />
         <Footer />
       </div>
     )

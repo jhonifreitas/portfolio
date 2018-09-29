@@ -1,0 +1,17 @@
+@import '../App/variables.scss';
+
+.social {
+    .btn.rounded-circle {
+        width: 3rem;
+        height: 3rem;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        font-size: 1.3rem;
+        &:hover {
+            background: $dark;            
+        }
+    }
+}    

@@ -13,3 +13,9 @@
 .btn-outline-dark:hover {
     background-color: $dark;
 }
+.btn.rounded-circle {
+	transition: all .2s;
+	&:hover{
+		transform: scale(1.1);
+	}
+}
