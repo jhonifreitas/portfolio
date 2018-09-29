@@ -20,10 +20,6 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    // 32 is the number of milliseconds to debounce
-    // I picked this because it's approx 1 frame (ie: 16.7ms)
-    // You'll want to modulate that to your taste.
-    // Add console.logs in handleScroll function to check if its flooding.
     return window.addEventListener('scroll', debounce(this.handleScroll, 16))
   }
 
@@ -32,7 +28,6 @@ class Header extends React.Component {
   }
 
   handleScroll = () => {
-    // + is unary operator, same as Number(window.scrollY)
     const scrollPositionY = +window.scrollY
     return this.setState({ scrollPositionY })
   }
@@ -41,7 +36,7 @@ class Header extends React.Component {
     const isScrolling = !!this.state.scrollPositionY
     return (
       <header className={(isScrolling) ? 'scrolling' : ''}>
-        <nav className="navbar navbar-expand-lg navbar-light bg-transparent py-4 fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-light bg-transparent py-2 fixed-top">
           <div className="container px-0">
             <a className="navbar-brand font-weight-bold text-dark" href="#top">mejf.</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

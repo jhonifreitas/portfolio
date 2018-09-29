@@ -1,15 +1,48 @@
 #Portfolio {
-	.project:hover .info {
-		opacity: 1;
+	.project, .project * {
+		transition: all .5s;
+	} .project {
+		background: #000;
+		overflow: hidden;
+		cursor: pointer;
+	 	
+	 	&:hover {
+	 		img {
+				opacity: .6;
+				transform: scale(1.05);
+			} .info {
+				transform: translate(0,0);
+			}
+		} .info {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transform: translate(0,100%);
+	    }
 	}
-	.info {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		opacity: 0;
-		background-color: rgba(0,0,0,.5);
-		transition: all .2s ease-in;
+}
+#Counter {
+	position: relative;
+	margin-top: 8%;
+	padding: 5% 0;
+	h1 {
+		font-size: 6rem;
+		line-height: 1;
+	}
+	&:before {
+		content: '';
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    z-index: -2;
+	    background-image: url(/assets/images/bg-2.png);
+	    background-blend-mode: multiply;
+	    background-attachment: fixed;
+	    background-position: center;
+	    background-size: cover;
+    	background-color: rgba(0,0,0,.5);
 	}
 }

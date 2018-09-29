@@ -23,6 +23,7 @@
         "title": "What i do"
     },
     "Portfolio": {
-        "title": "My recent works"
+        "title": "My recent works",
+        "button": "Load more"
     }
 }
