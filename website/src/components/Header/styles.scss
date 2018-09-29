@@ -34,7 +34,7 @@ nav {
 }
 .nav-link:active, 
 .nav-link:hover,
-.current .nav-link {
+.current.nav-link {
   font-weight: 700;
   &:after {
     width: 100%;

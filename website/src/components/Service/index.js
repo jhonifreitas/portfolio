@@ -21,7 +21,7 @@ class Box extends React.Component {
 class Service extends React.Component {
   render() {
     return (
-      <section id="Service" className="pb-5 mb-5">
+      <section id="Service" className="pt-8">
         <div className="card rounded-0">
           <div className="container">
             <div className="row mb-5">

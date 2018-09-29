@@ -8,7 +8,7 @@ import Social from '../Social'
 class Top extends React.Component {
   render() {
     return (
-      <section id="Top" className="mb-5">
+      <section id="Top">
         <div className="container">
 
           <div className="box-left d-none d-md-block"></div>

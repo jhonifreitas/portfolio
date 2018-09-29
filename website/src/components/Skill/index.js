@@ -22,7 +22,7 @@ class Item extends React.Component {
 class Skill extends React.Component {
   render() {
     return (
-      <section id="Skill" className="py-5 mb-5">
+      <section id="Skill" className="py-8">
         <div className="container">
           <div className="row mb-5">
             <div className="col-md-12">

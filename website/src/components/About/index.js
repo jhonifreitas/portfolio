@@ -8,7 +8,7 @@ import Button from '../Button'
 class About extends React.Component {
   render() {
     return (
-      <section id="About" className="pt-5 mb-5">
+      <section id="About" className="pt-8">
         <div className="container">
           <div className="row mb-5">
             <div className="col-md-12">

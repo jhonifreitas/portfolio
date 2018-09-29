@@ -2,11 +2,32 @@ import React from 'react'
 import './styles.scss'
 import { translate } from 'react-i18next'
 
+import { Link } from 'react-scroll'
+
 const debounce = (func, wait) => {
   let timeout
   return (...args) => {
     clearTimeout(timeout)
     timeout = setTimeout(() => func.apply(this, args), wait)
+  }
+}
+
+class Item extends React.Component {
+  render() {
+    return (
+      <li className="nav-item">
+        <Link className="nav-link text-dark px-3 text-uppercase" 
+              activeClass="current" 
+              to={ this.props.to} 
+              spy={true} 
+              smooth={true} 
+              offset={ this.props.offset } 
+              duration={900}
+        >
+          { this.props.children }
+        </Link>
+      </li>
+    )
   }
 }
 
@@ -38,27 +59,17 @@ class Header extends React.Component {
       <header className={(isScrolling) ? 'scrolling' : ''}>
         <nav className="navbar navbar-expand-lg navbar-light bg-transparent py-2 fixed-top">
           <div className="container px-0">
-            <a className="navbar-brand font-weight-bold text-dark" href="#top">mejf.</a>
+            <a className="navbar-brand font-weight-bold text-dark">mejf.</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ml-md-auto">
-                <li className="nav-item current">
-                  <a className="nav-link text-dark px-3 text-uppercase" href="#top">{ this.props.t('Header.home') }</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-dark px-3 text-uppercase" href="#about">{ this.props.t('Header.about') }</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-dark px-3 text-uppercase" href="#service">{ this.props.t('Header.service') }</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-dark px-3 text-uppercase" href="#portfolio">{ this.props.t('Header.portfolio') }</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-dark px-3 text-uppercase" href="#contact">{ this.props.t('Header.contact') }</a>
-                </li>
+                <Item to="Top">{ this.props.t('Header.home') }</Item>
+                <Item to="About">{ this.props.t('Header.about') }</Item>
+                <Item to="Skill">{ this.props.t('Header.skill') }</Item>
+                <Item to="Service" offset={110}>{ this.props.t('Header.service') }</Item>
+                <Item to="Portfolio">{ this.props.t('Header.portfolio') }</Item>
               </ul>
             </div>
           </div>

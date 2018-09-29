@@ -3,8 +3,8 @@
         "home": "home",
         "about": "about",
         "service": "service",
-        "portfolio": "portfolio",
-        "contact": "contact"
+        "skill": "my skills",
+        "portfolio": "portfolio"
     },
     "Top": {
     	"my_job": "Full Stack Developer",
