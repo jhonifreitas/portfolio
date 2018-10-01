@@ -16,12 +16,13 @@ class Item extends React.Component {
   render() {
     return (
       <li className="nav-item">
-        <Link className="nav-link text-dark px-3 text-uppercase" 
-              activeClass="current" 
-              to={ this.props.to} 
-              spy={true} 
-              smooth={true} 
-              offset={ this.props.offset } 
+        <Link className="nav-link px-3 text-uppercase"
+              href=""
+              activeClass="current"
+              to={ this.props.to}
+              spy={true}
+              smooth={true}
+              offset={ this.props.offset }
               duration={900}
         >
           { this.props.children }
@@ -55,11 +56,12 @@ class Header extends React.Component {
 
   render() {
     const isScrolling = !!this.state.scrollPositionY
+    const mobile = (window.innerWidth < 992) ? true : false
     return (
-      <header className={(isScrolling) ? 'scrolling' : ''}>
-        <nav className="navbar navbar-expand-lg navbar-light bg-transparent py-2 fixed-top">
+      <header>
+        <nav className={`navbar navbar-expand-lg py-2 fixed-top ${(isScrolling || mobile) ? 'navbar-dark bg-dark' : 'navbar-light bg-transparent'}`}>
           <div className="container px-0">
-            <a className="navbar-brand font-weight-bold text-dark">mejf.</a>
+            <Link className="navbar-brand font-weight-bold" to="Top" smooth={true} duration={900} href="">mejf.</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>

@@ -6,8 +6,9 @@ import Title from '../Title'
 
 class Box extends React.Component {
   render(){
+    const mobile = (window.innerWidth < 992) ? true : false
     return (
-      <div className="col-md-4 col-sm-6 col-12">
+      <div className={`col-md-4 col-sm-6 col-12 ${(mobile) ? 'mb-4' : ''}`}>
         <div className="px-4 text-center">
           <i className={`${ this.props.icon } fa-3x`}></i>
           <h3 className="my-3">{ this.props.title }</h3>

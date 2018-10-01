@@ -26,4 +26,12 @@
         border-right: none;
         border-color: #ffffff;
     }
+    .rounded-0.btn-outline-dark {
+        background-color: #FFF;
+        color: $dark;
+        &:hover {
+            color: #FFF;
+            background-color: $dark;
+        }
+    }
 }

@@ -6,8 +6,9 @@ import Title from '../Title'
 
 class Item extends React.Component {
   render(){
+    const mobile = (window.innerWidth < 992) ? true : false
     return (
-      <div className="col-md-4 col-sm-6 col-12">
+      <div className={`col-md-4 col-sm-6 col-12 ${(mobile) ? 'mb-3' : ''}`}>
         <div className="skills">
           <h4>{ this.props.title }</h4>
           <div className="progress rounded-0">
