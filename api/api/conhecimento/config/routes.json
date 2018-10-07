@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/conhecimento",
+      "handler": "Conhecimento.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/conhecimento/count",
+      "handler": "Conhecimento.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/conhecimento/:_id",
+      "handler": "Conhecimento.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/conhecimento",
+      "handler": "Conhecimento.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/conhecimento/:_id",
+      "handler": "Conhecimento.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/conhecimento/:_id",
+      "handler": "Conhecimento.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

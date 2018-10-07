@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "redeSocial",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Link": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Icone": {
+      "default": "",
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "conhecimento",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string"
+    },
+    "Porcentagem": {
+      "default": 0,
+      "max": 100,
+      "type": "integer"
+    }
+  }
+}

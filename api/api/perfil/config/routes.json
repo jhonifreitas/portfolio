@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/perfil",
+      "handler": "Perfil.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/perfil/count",
+      "handler": "Perfil.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/perfil/:_id",
+      "handler": "Perfil.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/perfil",
+      "handler": "Perfil.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/perfil/:_id",
+      "handler": "Perfil.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/perfil/:_id",
+      "handler": "Perfil.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
