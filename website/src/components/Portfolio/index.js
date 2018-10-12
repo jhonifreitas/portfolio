@@ -35,26 +35,7 @@ class Counter extends React.Component {
 
 class Portfolio extends React.Component {
 
-  state = {
-    response: null
-  };
-
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res }))
-      .catch(err => console.log(err));
-  }
-
-  callApi = async () => {
-    const response = await fetch('/projeto');
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    return body;
-  };
-
   render() {
-
-    console.log(this.state.response)
     return (
       <section id="Portfolio" className="pt-8">
         <div className="container">

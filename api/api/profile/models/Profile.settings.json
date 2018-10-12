@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "profile",
   "info": {
     "name": "profile",
     "description": ""
@@ -51,6 +51,11 @@
       "via": "related",
       "plugin": "upload",
       "required": true
+    },
+    "active": {
+      "default": false,
+      "unique": true,
+      "type": "boolean"
     }
   }
 }
