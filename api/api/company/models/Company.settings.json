@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "company",
+  "info": {
+    "name": "company",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "maxLength": 255,
+      "type": "string",
+      "required": true
+    },
+    "projects": {
+      "collection": "project",
+      "via": "company"
+    }
+  }
+}

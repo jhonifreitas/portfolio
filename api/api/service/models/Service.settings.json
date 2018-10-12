@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "service",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title-PT": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "title-EN": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "description-PT": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "description-EN": {
+      "default": "",
+      "type": "text",
+      "required": true
+    }
+  }
+}
