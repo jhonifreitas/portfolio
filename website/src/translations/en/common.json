@@ -27,7 +27,8 @@
         "title": "My recent works",
         "button": "Load more",
         "year_experience": "Years Experience",
-        "projects_delivered": "Projects Delivered"
+        "projects_delivered": "Projects Delivered",
+        "companys": "Companys"
     },
     "Contact": {
         "title": "Contact"

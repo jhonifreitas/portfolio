@@ -7,12 +7,13 @@ import Title from '../Title'
 class Item extends React.Component {
   render(){
     const mobile = (window.innerWidth < 992) ? true : false
+    let porcent = this.props.value.porcent+'%'
     return (
       <div className={`col-md-4 col-sm-6 col-12 ${(mobile) ? 'mb-3' : ''}`}>
         <div className="skills">
-          <h4>{ this.props.title }</h4>
+          <h4>{ this.props.value.name }</h4>
           <div className="progress rounded-0">
-            <div className="progress-bar bg-dark" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{ width: this.props.porcent + '%' }}></div>
+            <div className="progress-bar bg-dark" role="progressbar" aria-valuenow={this.props.value.porcent} aria-valuemin="0" aria-valuemax="100" title={porcent} style={{ width: porcent }}></div>
           </div>
         </div>
       </div>
@@ -31,9 +32,7 @@ class Skill extends React.Component {
             </div>
           </div>
           <div className="row">
-            <Item title="HTML/CSS" porcent="90" />
-            <Item title="JavaScript" porcent="60" />
-            <Item title="PHP" porcent="70" />
+            { this.props.values.map(value => <Item key={value.toString()} value={value} />)}
           </div>
         </div>
       </section>

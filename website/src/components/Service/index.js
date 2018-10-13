@@ -7,12 +7,21 @@ import Title from '../Title'
 class Box extends React.Component {
   render(){
     const mobile = (window.innerWidth < 992) ? true : false
+    let title = ''
+    let text = ''
+    if (this.props.lng === 'pt-BR') {
+      title = this.props.value.title_PT
+      text = this.props.value.description_PT
+    }else if(this.props.lng === 'en-US'){
+      title = this.props.value.title_EN
+      text = this.props.value.description_EN
+    }
     return (
-      <div className={`col-md-4 col-sm-6 col-12 ${(mobile) ? 'mb-4' : ''}`}>
+      <div className={`col ${(mobile) ? 'mb-4' : ''}`}>
         <div className="px-4 text-center">
-          <i className={`${ this.props.icon } fa-3x`}></i>
-          <h3 className="my-3">{ this.props.title }</h3>
-          <p className="mb-0">{ this.props.text }</p>
+          <i className={`${ this.props.value.icon } fa-3x`}></i>
+          <h3 className="my-3">{ title }</h3>
+          <p className="mb-0">{ text }</p>
         </div>
       </div>
     )
@@ -31,9 +40,7 @@ class Service extends React.Component {
               </div>
             </div>
             <div className="row">
-              <Box icon="fas fa-desktop" title="Front-end" text="As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript MVC frameworks such as angular" />
-              <Box icon="fas fa-code" title="Back-end" text="As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript MVC frameworks such as angular" />
-              <Box icon="fab fa-hubspot" title="Consultancy" text="As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript MVC frameworks such as angular" />
+              { this.props.values.map(value => <Box key={value.toString()} value={value} lng={this.props.lng} />)}
             </div>
           </div>
         </div>

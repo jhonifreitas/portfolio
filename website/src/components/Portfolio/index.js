@@ -7,14 +7,18 @@ import Button from '../Button'
 
 class Item extends React.Component {
   render(){
+    let type = this.props.value.type
+    if (this.props.value.type === 'mobile') {type = 'aplicativo'}
+    else if(this.props.value.type === 'mobile'){type = 'sistema'}
+
     return (
       <div className="col-md-4 col-sm-6 col-12 mb-4">
         <div className="project position-relative">
-          <img src={ this.props.image } className="w-100" alt={ this.props.title } title={ this.props.title } />
+          <img src={ this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
           <div className="info text-light px-4 py-2">
             <i className="fas fa-desktop h5 mb-0 mr-2"></i>
-            <span>website</span>
-            <h4 className="font-weight-bold">{ this.props.title }</h4>
+            <span>{type}</span>
+            <h4 className="font-weight-bold">{ this.props.value.name }</h4>
           </div>
         </div>
       </div>
@@ -35,6 +39,33 @@ class Counter extends React.Component {
 
 class Portfolio extends React.Component {
 
+  state = {
+    projects: [],
+    total_projects: 0,
+    total_companys: 0,
+  };
+
+  componentDidMount() {
+    this.callApi('/project')
+      .then(res => this.setState({ projects: res }))
+      .catch(err => console.log(err));
+
+    this.callApi('/project/count')
+      .then(res => this.setState({ total_projects: res }))
+      .catch(err => console.log(err));
+
+    this.callApi('/company/count')
+      .then(res => this.setState({ total_companys: res }))
+      .catch(err => console.log(err));
+  }
+
+  callApi = async (url) => {
+    const response = await fetch(url);
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    return body;
+  };
+
   render() {
     return (
       <section id="Portfolio" className="pt-8">
@@ -45,20 +76,22 @@ class Portfolio extends React.Component {
             </div>
           </div>
           <div className="row">
-            <Item image="/assets/images/portfolio-1.png" title="Sorvetes Urca" />
+            { this.state.projects.map(value => <Item key={value.toString()} value={value} />)}
           </div>
-          <div className="row mt-5">
-            <div className="col-md-12 text-center">
-              <Button className="px-45 btn-outline-dark" link="#">{ this.props.t('Portfolio.button') }</Button>
+          { this.state.projects.length < this.state.total_projects &&
+            <div className="row mt-5">
+              <div className="col-md-12 text-center">
+                <Button className="px-45 btn-outline-dark" link="#">{ this.props.t('Portfolio.button') }</Button>
+              </div>
             </div>
-          </div>
+          }
         </div>
         <div id="Counter">
           <div className="container">
             <div className="row">
-              <Counter number="10" title={ this.props.t('Portfolio.year_experience') } />
-              <Counter number="120" title={ this.props.t('Portfolio.projects_delivered') }/>
-              <Counter number="50" title={ this.props.t('Portfolio.projects_delivered') }/>
+              <Counter number={this.props.years_experience} title={ this.props.t('Portfolio.year_experience') } />
+              <Counter number={this.state.total_projects} title={ this.props.t('Portfolio.projects_delivered') }/>
+              <Counter number={this.state.total_companys} title={ this.props.t('Portfolio.companys') }/>
             </div>
           </div>
         </div>

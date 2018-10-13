@@ -6,7 +6,7 @@
         height: 100vh;
     }
     img {
-        filter: sepia(1);
+        filter: grayscale(.8);
     }
     .box-left,
     .box-right {

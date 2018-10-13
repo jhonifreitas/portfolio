@@ -5,8 +5,8 @@ class Item extends React.Component {
   render() {
     return(
       <li className="list-inline-item">
-        <a href={ this.props.link } className="btn btn-outline-dark rounded-circle">
-          <i className={ this.props.icon }></i>
+        <a href={ this.props.value.link } className="btn btn-outline-dark rounded-circle">
+          <i className={ this.props.value.icon }></i>
         </a>
       </li>
     )
@@ -14,14 +14,28 @@ class Item extends React.Component {
 }
 
 class Social extends React.Component {
+
+  state = {
+    values: []
+  };
+
+  componentDidMount() {
+    this.callApi('/social')
+      .then(res => this.setState({ values: res }))
+      .catch(err => console.log(err));
+  }
+
+  callApi = async (url) => {
+    const response = await fetch(url);
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    return body;
+  };
+
   render() {
     return (
 			<ul className="list-inline m-0 social">
-        <Item link="" icon="fab fa-linkedin-in" />
-        <Item link="" icon="fab fa-github-alt" />
-        <Item link="" icon="fab fa-facebook-f" />
-        <Item link="" icon="fab fa-whatsapp" />
-        <Item link="" icon="fas fa-envelope" />
+        { this.state.values.map(value => <Item key={value.toString()} value={value} />)}
       </ul>
     )
   }

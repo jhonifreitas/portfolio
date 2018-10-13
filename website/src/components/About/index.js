@@ -7,6 +7,17 @@ import Button from '../Button'
 
 class About extends React.Component {
   render() {
+    let about = ''
+    let cv = ''
+    if (this.props.value) {
+      if (this.props.lng === 'pt-BR') {
+        about = this.props.value.about_PT
+        cv = this.props.value.CV_PT.url
+      }else if(this.props.lng === 'en-US'){
+        about = this.props.value.about_EN
+        cv = this.props.value.CV_EN.url
+      }
+    }
     return (
       <section id="About" className="pt-8">
         <div className="container">
@@ -17,8 +28,8 @@ class About extends React.Component {
           </div>
           <div className="row">
             <div className="col-md-6 offset-md-3 text-center">
-              <p className="mb-5">{ this.props.t('About.text') }</p>
-              <Button className="px-45 btn-dark" link="#">{ this.props.t('About.button') }</Button>
+              <p className="mb-5">{about}</p>
+              <Button className="px-45 btn-dark" link={cv}>{ this.props.t('About.button') }</Button>
             </div>
           </div>
         </div>
