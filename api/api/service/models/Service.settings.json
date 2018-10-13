@@ -9,12 +9,12 @@
     "timestamps": true
   },
   "attributes": {
-    "title-PT": {
+    "title_PT": {
       "default": "",
       "type": "string",
       "required": true
     },
-    "title-EN": {
+    "title_EN": {
       "default": "",
       "type": "string",
       "required": true
@@ -24,12 +24,12 @@
       "type": "string",
       "required": true
     },
-    "description-PT": {
+    "description_PT": {
       "default": "",
       "type": "text",
       "required": true
     },
-    "description-EN": {
+    "description_EN": {
       "default": "",
       "type": "text",
       "required": true

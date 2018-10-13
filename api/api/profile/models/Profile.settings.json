@@ -56,6 +56,11 @@
       "default": false,
       "unique": true,
       "type": "boolean"
+    },
+    "years_experience": {
+      "default": 0,
+      "max": 100,
+      "type": "integer"
     }
   }
 }

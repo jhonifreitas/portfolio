@@ -14,45 +14,45 @@
       "type": "string",
       "required": true
     },
-    "company": {
-      "model": "company",
-      "via": "projects"
-    },
-    "skills": {
-      "collection": "skill",
-      "via": "project",
-      "columnName": ""
-    },
-    "description-PT": {
-      "default": "",
-      "type": "text",
-      "required": true
-    },
-    "description-EN": {
-      "default": "",
-      "type": "text",
-      "required": true
-    },
     "type": {
       "default": "",
       "type": "enumeration",
+      "required": true,
       "enum": [
         "mobile",
         "website",
         "system"
       ]
     },
-    "images": {
-      "collection": "file",
-      "via": "related",
-      "plugin": "upload",
+    "description_PT": {
+      "default": "",
+      "type": "text",
       "required": true
     },
-    "image-featured": {
+    "description_EN": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "featured_image": {
       "model": "file",
       "via": "related",
       "plugin": "upload",
       "required": true
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "company": {
+      "model": "company",
+      "via": "projects"
+    },
+    "skills": {
+      "collection": "skill",
+      "via": "project"
     }
   }
 }
