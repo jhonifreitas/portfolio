@@ -1,25 +1,38 @@
 #Portfolio {
 	.project, .project * {
 		transition: all .5s;
-	} .project {
-		background: #000;
-		overflow: hidden;
-		cursor: pointer;
-	 	
-	 	&:hover {
-	 		img {
-				opacity: .6;
-				transform: scale(1.05);
+	} .project:not(.opened) {
+		> div:last-child {
+			display: none;
+		} .image-info {
+			background: #000;
+			overflow: hidden;
+			cursor: pointer;
+
+		 	&:hover {
+		 		img {
+					opacity: .6;
+					transform: scale(1.05);
+				} .info {
+					transform: translate(0,0);
+				}
 			} .info {
-				transform: translate(0,0);
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				transform: translate(0,100%);
+		    }
+		}
+	} .project.opened {
+		box-shadow: 3px 3px 40px 0px #212121;
+
+		> div:first-child {
+			padding: 0;
+			.info {
+				display: none;
 			}
-		} .info {
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			transform: translate(0,100%);
-	    }
+		}
 	}
 }
 #Counter {

@@ -28,6 +28,8 @@
         "button": "Load more",
         "year_experience": "Years Experience",
         "projects_delivered": "Projects Delivered",
+        "technologies": "Technologies",
+        "company": "Company",
         "companys": "Companys"
     },
     "Contact": {

@@ -1,11 +1,11 @@
 @import './variables.scss';
 
-*{
+*, pre {
     font-family: 'Cormorant', serif;
 }
 
 // BG COLOR
-.bg-dark{
+.bg-dark {
     background-color: $dark !important;
 }
 
@@ -13,29 +13,33 @@
 .text-dark{
     color: $dark !important;
 }
-.text-dark-light{
+.text-dark-light {
     color: $dark-light !important;
 }
-.text-gray{
+.text-gray {
     color: $gray !important;
 }
 
 // FONTS
-.h1, h1{
+.h1, h1 {
     font-size: 3rem;
 }
-.h4, h4{
+.h4, h4 {
     font-size: 1.4rem;
 }
 
 // FONT WEIGHT
-.font-weight-medium{
+.font-weight-medium {
     font-weight: 500;
 }
-.font-weight-semi-bold{
+.font-weight-semi-bold {
     font-weight: 600;
 }
 
+pre {
+    overflow: initial;
+    white-space: pre-line;
+}
 
 // PADDING
 .px-45 {
