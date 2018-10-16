@@ -9,10 +9,10 @@ class Box extends React.Component {
     const mobile = (window.innerWidth < 992) ? true : false
     let title = ''
     let text = ''
-    if (this.props.lng === 'pt-BR') {
+    if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
       title = this.props.value.title_PT
       text = this.props.value.description_PT
-    }else if(this.props.lng === 'en-US'){
+    }else {
       title = this.props.value.title_EN
       text = this.props.value.description_EN
     }

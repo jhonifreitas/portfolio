@@ -18,8 +18,10 @@ class Item extends React.Component {
 
   render(){
     let type = this.props.value.type
-    if (this.props.value.type === 'mobile') {type = 'aplicativo'}
-    else if(this.props.value.type === 'mobile'){type = 'sistema'}
+    if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
+      if (this.props.value.type === 'mobile') {type = 'aplicativo'}
+      else if(this.props.value.type === 'mobile'){type = 'sistema'}
+    }
 
     return (
       <div className={`col-sm-6 col-12 mb-4 ${(this.state.active) ? 'col-md-12' : 'col-md-4'}`}>
@@ -29,7 +31,7 @@ class Item extends React.Component {
               <img src={ this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
               <div className="info text-light px-4 py-2">
                 <i className="fas fa-desktop h5 mb-0 mr-2"></i>
-                <span>{type}</span>
+                <span className="text-capitalize">{type}</span>
                 <h4 className="font-weight-bold">{ this.props.value.name }</h4>
               </div>
             </div>
@@ -40,7 +42,7 @@ class Item extends React.Component {
               <h4 className="text-capitalize">{type}</h4>
               <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4>
               <div className="my-4">
-                <pre className="h6">{this.props.value.description_PT}</pre>
+                <pre className="h6">{ this.props.lng === 'pt-BR' || this.props.lng === 'pt' ? this.props.value.description_PT : this.props.value.description_EN }</pre>
               </div>
               { this.props.value.skills.length > 0 &&
                 <div>
@@ -123,7 +125,7 @@ class Portfolio extends React.Component {
             </div>
           </div>
           <div className="row">
-            { this.state.projects.map((value, key) => <Item key={key.toString()} value={value} />)}
+            { this.state.projects.map((value, key) => <Item key={key.toString()} value={value} lng={this.props.lng} />)}
           </div>
           { this.state.projects.length < this.state.total_projects &&
             <div className="row mt-5">

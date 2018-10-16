@@ -23,10 +23,11 @@ class Top extends React.Component {
                   <img src={ this.props.value ? this.props.value.photo.url : '' } className="rounded-circle w-50" alt="" title="Photo" />
                 </div>
                 <h1 className="mb-0 font-weight-bold">{ this.props.value ? this.props.value.name : '' }</h1>
-                <h4 className="font-weight-normal">
-                  { this.props.value && this.props.lng === 'pt-BR' ? this.props.value.profession_PT : '' }
-                  { this.props.value && this.props.lng === 'en-US' ? this.props.value.profession_EN : '' }
-                </h4>
+                { this.props.value &&
+                  <h4 className="font-weight-normal">
+                    { this.props.lng === 'pt-BR' || this.props.lng === 'pt' ? this.props.value.profession_PT : this.props.value.profession_EN }
+                  </h4>
+                }
 
                 <div className="mt-4">
                   <Link className={`btn rounded-0 text-uppercase font-weight-semi-bold mr-3 px-4 btn-dark ${(mobile) ? 'w-100 mb-2' : ''}`}
