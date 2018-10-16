@@ -77,12 +77,12 @@ class Portfolio extends React.Component {
     projects: [],
     total_projects: 0,
     total_companys: 0,
+    limit: 9
   };
 
   componentDidMount() {
-    this.callApi('/project?_limit=9')
-      .then(res => this.setState({ projects: res }))
-      .catch(err => console.log(err));
+
+    this.loadProjects()
 
     this.callApi('/project/count')
       .then(res => this.setState({ total_projects: res }))
@@ -100,6 +100,19 @@ class Portfolio extends React.Component {
     return body;
   };
 
+  loadProjects(){
+    this.callApi('/project?_limit='+this.state.limit)
+      .then(res => {
+        this.setState({ projects: res })
+        this.setState({ limit: this.state.limit+9 });
+      })
+      .catch(err => console.log(err));
+  }
+
+  show_more = () => {
+    this.loadProjects();
+  }
+
   render() {
     return (
       <section id="Portfolio" className="pt-8">
@@ -115,7 +128,7 @@ class Portfolio extends React.Component {
           { this.state.projects.length < this.state.total_projects &&
             <div className="row mt-5">
               <div className="col-md-12 text-center">
-                <Button className="px-45 btn-outline-dark" link="#">{ this.props.t('Portfolio.button') }</Button>
+                <Button className="px-45 btn-outline-dark" onClick={this.show_more}>{ this.props.t('Portfolio.button') }</Button>
               </div>
             </div>
           }

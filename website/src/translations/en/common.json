@@ -25,7 +25,7 @@
     },
     "Portfolio": {
         "title": "My recent works",
-        "button": "Load more",
+        "button": "Show more",
         "year_experience": "Years Experience",
         "projects_delivered": "Projects Delivered",
         "technologies": "Technologies",
