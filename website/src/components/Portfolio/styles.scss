@@ -1,10 +1,8 @@
 #Portfolio {
-	.project, .project * {
-		transition: all .5s;
+	* {
+		transition: all .5s ease-in-out;
 	} .project:not(.opened) {
-		> div:last-child {
-			display: none;
-		} .image-info {
+		.image-info {
 			background: #000;
 			overflow: hidden;
 			cursor: pointer;
@@ -32,7 +30,16 @@
 			.info {
 				display: none;
 			}
+		} .all-info {
+			opacity: 1;
+			transition-delay: .6s;
 		}
+	} .all-info {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		opacity: 0;
+		transition-delay: 0s;
 	}
 }
 #Counter {

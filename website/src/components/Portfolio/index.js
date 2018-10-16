@@ -34,23 +34,25 @@ class Item extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-md-8 p-5">
-            <h2 className="font-weight-bold">{ this.props.value.name }</h2>
-            <h4 className="text-capitalize">{type}</h4>
-            <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4>
-            <div className="my-4">
-              <pre className="h6">{this.props.value.description_PT}</pre>
-            </div>
-            { this.props.value.skills.length > 0 &&
-              <div>
-                <h6><Trans i18nKey='Portfolio.technologies'></Trans></h6>
-                <ul className="list-inline">
-                  { this.props.value.skills.map((value, key) =>
-                    <li key={key} className="list-inline-item font-weight-bold"><i className="fas fa-check mr-2"></i>{value.name}</li>
-                  )}
-                </ul>
+          <div className="col-md-8">
+            <div className="all-info p-5">
+              <h2 className="font-weight-bold">{ this.props.value.name }</h2>
+              <h4 className="text-capitalize">{type}</h4>
+              <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4>
+              <div className="my-4">
+                <pre className="h6">{this.props.value.description_PT}</pre>
               </div>
-            }
+              { this.props.value.skills.length > 0 &&
+                <div>
+                  <h6><Trans i18nKey='Portfolio.technologies'></Trans></h6>
+                  <ul className="list-inline">
+                    { this.props.value.skills.map((value, key) =>
+                      <li key={key} className="list-inline-item font-weight-bold"><i className="fas fa-check mr-2"></i>{value.name}</li>
+                    )}
+                  </ul>
+                </div>
+              }
+            </div>
           </div>
         </div>
       </div>
