@@ -20,7 +20,7 @@ class About extends React.Component {
     }
     return (
       <section id="About" className="pt-8">
-        <div className="container">
+        <div className="container wow fadeIn" data-wow-delay=".2s">
           <div className="row mb-5">
             <div className="col-md-12">
               <Title text={ this.props.t('About.title') } />

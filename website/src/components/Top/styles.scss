@@ -5,13 +5,10 @@
     .row {
         height: 100vh;
     }
-    img {
-        filter: grayscale(.8);
-    }
     .box-left,
     .box-right {
         position: absolute;
-        border: 17.25px solid #e8e8e8;
+        border: 20px solid #e8e8e8;
     } .box-left{
         left: 0;
         top: 15%;
@@ -21,10 +18,11 @@
     } .box-right {
         top: 25%;
         right: 0;
-        width: 15%;
+        width: 20%;
         height: 50%;
         border-right: none;
         border-color: #ffffff;
+        overflow: hidden;
     }
     .rounded-0.btn-outline-dark {
         background-color: #FFF;

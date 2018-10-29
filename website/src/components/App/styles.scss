@@ -4,6 +4,20 @@
     font-family: 'Cormorant', serif;
 }
 
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: #ddd;
+}
+*::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 // BG COLOR
 .bg-dark {
     background-color: $dark !important;

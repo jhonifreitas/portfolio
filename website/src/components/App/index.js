@@ -1,4 +1,5 @@
 import React from 'react'
+import WOW from "wowjs"
 import './styles.scss'
 
 import Header from '../Header'
@@ -19,6 +20,11 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+
+    new WOW.WOW({
+      live: false
+    }).init();
+
     this.callApi('/profile?active=true')
       .then(res => this.setState({ profile: res[0] }))
       .catch(err => console.log(err));

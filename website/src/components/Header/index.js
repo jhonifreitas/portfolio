@@ -61,7 +61,7 @@ class Header extends React.Component {
       <header>
         <nav className={`navbar navbar-expand-lg py-2 fixed-top ${(isScrolling || mobile) ? 'navbar-dark bg-dark' : 'navbar-light bg-transparent'}`}>
           <div className="container px-0">
-            <Link className="navbar-brand font-weight-bold" to="Top" smooth={true} duration={900} href="">mejf.</Link>
+            <Link className="navbar-brand font-weight-bold" to="Top" smooth={true} duration={900} href="">jf.</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
