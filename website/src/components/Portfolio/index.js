@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles.scss'
+import WOW from 'wowjs'
 import { translate, Trans } from 'react-i18next'
 
 import Title from '../Title'
@@ -11,6 +12,12 @@ class Item extends React.Component {
     active: false,
   }
 
+  componentDidMount(){
+    new WOW.WOW({
+      live: false
+    }).init();
+  }
+
   open_project = () => {
     const currentState = this.state.active;
     this.setState({ active: !currentState });
@@ -18,13 +25,16 @@ class Item extends React.Component {
 
   render(){
     let type = this.props.value.type
+    let time = this.props.delay ? this.props.delay+1 : 0
+    const delay = '.'+(time)+'s'
+
     if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
       if (this.props.value.type === 'mobile') {type = 'aplicativo'}
       else if(this.props.value.type === 'mobile'){type = 'sistema'}
     }
 
     return (
-      <div className={`col-sm-6 col-12 mb-4 ${(this.state.active) ? 'col-md-12' : 'col-md-4'}`}>
+      <div className={`col-sm-6 col-12 mb-4 wow pulse ${(this.state.active) ? 'col-md-12' : 'col-md-4'}`} data-wow-delay={delay}>
         <div className={`project row ${(this.state.active) ? 'opened' : ''}`} onClick={this.open_project}>
           <div className={this.state.active ? 'col-md-4' : 'col-md-12'}>
             <div className="image-info position-relative">
@@ -63,9 +73,18 @@ class Item extends React.Component {
 }
 
 class Counter extends React.Component {
+
+  componentDidMount(){
+    new WOW.WOW({
+      live: false
+    }).init();
+  }
+
   render(){
+    let time = this.props.delay ? this.props.delay+1 : 0
+    const delay = '.'+(time)+'s'
     return (
-      <div className="col-md-4 col-sm-6 col-12 text-center">
+      <div className="col-md-4 col-sm-6 col-12 text-center wow fadeIn" data-wow-delay={delay}>
         <h1 className="text-light font-weight-normal">{ this.props.number }</h1>
         <h3 className="text-light mb-4">{ this.props.title }</h3>
       </div>
@@ -119,13 +138,13 @@ class Portfolio extends React.Component {
     return (
       <section id="Portfolio" className="pt-8">
         <div className="container">
-          <div className="row mb-5">
+          <div className="row mb-5 wow fadeIn" data-wow-delay=".2s">
             <div className="col-md-12">
               <Title text={ this.props.t('Portfolio.title') } />
             </div>
           </div>
           <div className="row">
-            { this.state.projects.map((value, key) => <Item key={key.toString()} value={value} lng={this.props.lng} />)}
+            { this.state.projects.map((value, key) => <Item key={key} delay={key} value={value} lng={this.props.lng} />)}
           </div>
           { this.state.projects.length < this.state.total_projects &&
             <div className="row mt-5">
@@ -138,9 +157,9 @@ class Portfolio extends React.Component {
         <div id="Counter">
           <div className="container">
             <div className="row">
-              <Counter number={this.props.years_experience} title={ this.props.t('Portfolio.year_experience') } />
-              <Counter number={this.state.total_projects} title={ this.props.t('Portfolio.projects_delivered') }/>
-              <Counter number={this.state.total_companys} title={ this.props.t('Portfolio.companys') }/>
+              <Counter number={this.props.years_experience} title={ this.props.t('Portfolio.year_experience') } delay={2}/>
+              <Counter number={this.state.total_projects} title={ this.props.t('Portfolio.projects_delivered') } delay={1}/>
+              <Counter number={this.state.total_companys} title={ this.props.t('Portfolio.companys') } delay={0}/>
             </div>
           </div>
         </div>

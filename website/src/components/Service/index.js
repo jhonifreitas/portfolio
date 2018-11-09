@@ -7,8 +7,8 @@ import Title from '../Title'
 class Box extends React.Component {
   render(){
     const mobile = (window.innerWidth < 992) ? true : false
-    let title = ''
-    let text = ''
+    let title = null
+    let text = null
     if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
       title = this.props.value.title_PT
       text = this.props.value.description_PT
@@ -32,7 +32,7 @@ class Service extends React.Component {
   render() {
     return (
       <section id="Service" className="pt-8">
-        <div className="card rounded-0">
+        <div className="card rounded-0 wow fadeInUp" data-wow-delay=".2s">
           <div className="container">
             <div className="row mb-5">
               <div className="col-md-12">
@@ -40,7 +40,7 @@ class Service extends React.Component {
               </div>
             </div>
             <div className="row">
-              { this.props.values.map(value => <Box key={value.toString()} value={value} lng={this.props.lng} />)}
+              { this.props.values.map((value, key) => <Box key={key} delay={key} value={value} lng={this.props.lng} />)}
             </div>
           </div>
         </div>

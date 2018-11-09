@@ -16,13 +16,13 @@ class Item extends React.Component {
   render(){
     const mobile = (window.innerWidth < 992) ? true : false
     const porcent = this.props.value.porcent+'%'
-    console.log(this.props.getKey())
-    const delay = '.'+this.props.key+'s'
+    let time = this.props.delay ? this.props.delay+1 : 0
+    const delay = '.'+(time)+'s'
     return (
       <div className={`col-md-4 col-sm-6 col-12 ${(mobile) ? 'mb-3' : ''}`}>
-        <div className="skills wow fadeInRight">
+        <div className="skills wow fadeInRight" data-wow-delay={delay}>
           <h4>{ this.props.value.name }</h4>
-          <div className="progress rounded-0" data-wow-delay={delay}>
+          <div className="progress rounded-0">
             <div className="progress-bar bg-dark" role="progressbar" aria-valuenow={this.props.value.porcent} aria-valuemin="0" aria-valuemax="100" title={porcent} style={{ width: porcent }}></div>
           </div>
         </div>
@@ -42,7 +42,7 @@ class Skill extends React.Component {
             </div>
           </div>
           <div className="row">
-            { this.props.values.map((value, key) => <Item key={key} value={value} />)}
+            { this.props.values.map((value, key) => <Item key={key} delay={key} value={value} /> )}
           </div>
         </div>
       </section>
