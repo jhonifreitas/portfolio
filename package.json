@@ -103,5 +103,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://localhost:1337/"
+  "proxy": "https://jf-portfolio.herokuapp.com/",
+  "homepage": "https://jhonifreitas.github.io/my-portfolio"
 }
