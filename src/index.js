@@ -14,7 +14,7 @@ i18next
   .use(XHR)
   .use(LngDetector)
   .init({
-    debug: true,
+    debug: false,
     interpolation: { escapeValue: false },
     fallbackLng: 'en',
     resources: {
