@@ -16,8 +16,8 @@ class Item extends React.Component {
   render(){
     const mobile = (window.innerWidth < 992) ? true : false
     const porcent = this.props.value.porcent+'%'
-    let time = this.props.delay ? this.props.delay+1 : 0
-    const delay = '.'+(time)+'s'
+    let time = this.props.delay ? this.props.delay/10 : 0
+    const delay = time+'s'
     return (
       <div className={`col-md-4 col-sm-6 col-12 ${(mobile) ? 'mb-3' : 'mb-4'}`}>
         <div className="skills wow fadeInRight" data-wow-delay={delay}>

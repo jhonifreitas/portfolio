@@ -25,12 +25,13 @@ class Item extends React.Component {
 
   render(){
     let type = this.props.value.type
-    let time = this.props.delay ? this.props.delay+1 : 0
-    const delay = '.'+(time)+'s'
+    let time = this.props.delay ? this.props.delay/10 : 0
+    const delay = time+'s'
 
     if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
       if (this.props.value.type === 'mobile') {type = 'aplicativo'}
-      else if(this.props.value.type === 'mobile'){type = 'sistema'}
+      else if (this.props.value.type === 'website') {type = 'site'}
+      else if(this.props.value.type === 'system'){type = 'sistema'}
     }
 
     return (

@@ -35,7 +35,7 @@ class Social extends React.Component {
   render() {
     return (
 			<ul className="list-inline m-0 social">
-        { this.state.values.map(value => <Item key={value.toString()} value={value} />)}
+        { this.state.values.map((value, key) => <Item key={key} value={value} />)}
       </ul>
     )
   }
