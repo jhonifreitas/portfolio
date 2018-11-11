@@ -5,7 +5,7 @@ class Item extends React.Component {
   render() {
     return(
       <li className="list-inline-item">
-        <a href={ this.props.value.link } className="btn btn-outline-dark rounded-circle">
+        <a href={ this.props.value.link } className="btn btn-outline-dark rounded-circle" target="_blank">
           <i className={ this.props.value.icon }></i>
         </a>
       </li>
