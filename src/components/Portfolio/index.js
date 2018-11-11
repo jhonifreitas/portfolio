@@ -38,7 +38,7 @@ class Item extends React.Component {
         <div className={`project row ${(this.state.active) ? 'opened' : ''}`} onClick={this.open_project}>
           <div className={this.state.active ? 'col-md-4' : 'col-md-12'}>
             <div className="image-info position-relative">
-              <img src={ this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
+              <img src={ process.env.REACT_APP_API_URL+this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
               <div className="info text-light px-4 py-2">
                 <i className="fas fa-desktop h5 mb-0 mr-2"></i>
                 <span className="text-capitalize">{type}</span>

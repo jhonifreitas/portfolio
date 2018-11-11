@@ -10,8 +10,6 @@ import Service from '../Service'
 import Portfolio from '../Portfolio'
 import Footer from '../Footer'
 
-console.log(process.env)
-
 class App extends React.Component {
 
   state = {

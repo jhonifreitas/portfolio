@@ -29,7 +29,7 @@ class About extends React.Component {
           <div className="row">
             <div className="col-md-6 offset-md-3 text-center">
               <p className="mb-5">{about}</p>
-              <Button className="px-45 btn-dark" link={cv}>{ this.props.t('About.button') }</Button>
+              <Button className="px-45 btn-dark" link={process.env.REACT_APP_API_URL+cv}>{ this.props.t('About.button') }</Button>
             </div>
           </div>
         </div>
