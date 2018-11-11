@@ -1,7 +1,7 @@
 #Portfolio {
 	* {
 		transition: all .5s ease-in-out;
-	} .project:not(.opened) {
+	} .project {
 		.image-info {
 			background: #000;
 			overflow: hidden;
@@ -22,24 +22,6 @@
 				transform: translate(0,100%);
 		    }
 		}
-	} .project.opened {
-		box-shadow: 3px 3px 40px 0px #212121;
-
-		> div:first-child {
-			padding: 0;
-			.info {
-				display: none;
-			}
-		} .all-info {
-			opacity: 1;
-			transition-delay: .6s;
-		}
-	} .all-info {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		opacity: 0;
-		transition-delay: 0s;
 	}
 }
 #Counter {

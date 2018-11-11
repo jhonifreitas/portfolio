@@ -8,19 +8,10 @@ import Button from '../Button'
 
 class Item extends React.Component {
 
-  state = {
-    active: false,
-  }
-
   componentDidMount(){
     new WOW.WOW({
       live: false
     }).init();
-  }
-
-  open_project = () => {
-    const currentState = this.state.active;
-    this.setState({ active: !currentState });
   }
 
   render(){
@@ -35,9 +26,9 @@ class Item extends React.Component {
     }
 
     return (
-      <div className={`col-sm-6 col-12 mb-4 wow pulse ${(this.state.active) ? 'col-md-12' : 'col-md-4'}`} data-wow-delay={delay}>
-        <div className={`project row ${(this.state.active) ? 'opened' : ''}`} onClick={this.open_project}>
-          <div className={this.state.active ? 'col-md-4' : 'col-md-12'}>
+      <div className="col-md-4 col-sm-6 col-12 mb-4 wow pulse" data-wow-delay={delay}>
+        <div className="project row" data-toggle="modal" data-target={"#project-"+this.props.delay}>
+          <div className="col-md-12">
             <div className="image-info position-relative">
               <img src={ process.env.REACT_APP_API_URL+this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
               <div className="info text-light px-4 py-2">
@@ -47,24 +38,38 @@ class Item extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-md-8">
-            <div className="all-info p-5">
-              <h2 className="font-weight-bold">{ this.props.value.name }</h2>
-              <h4 className="text-capitalize">{type}</h4>
-              <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4>
-              <div className="my-4">
-                <pre className="h6">{ this.props.lng === 'pt-BR' || this.props.lng === 'pt' ? this.props.value.description_PT : this.props.value.description_EN }</pre>
-              </div>
-              { this.props.value.skills.length > 0 &&
-                <div>
-                  <h6><Trans i18nKey='Portfolio.technologies'></Trans></h6>
-                  <ul className="list-inline">
-                    { this.props.value.skills.map((value, key) =>
-                      <li key={key} className="list-inline-item font-weight-bold"><i className="fas fa-check mr-2"></i>{value.name}</li>
-                    )}
-                  </ul>
+        </div>
+        <div className="modal fade" id={"project-"+this.props.delay} tabIndex="-1" role="dialog" aria-hidden="true">
+          <div className="modal-dialog modal-lg" role="document">
+            <div className="modal-content">
+              <div className="modal-body">
+                <div className="row">
+                  <div className="col-md-4">
+                    <img src={ process.env.REACT_APP_API_URL+this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="all-info p-5">
+                      <h2 className="font-weight-bold">{ this.props.value.name }</h2>
+                      <h4 className="text-capitalize">{type}</h4>
+                      { this.props.value.company && <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4> }
+                      <div className="mt-4">
+                        <pre className="h6">{ this.props.lng === 'pt-BR' || this.props.lng === 'pt' ? this.props.value.description_PT : this.props.value.description_EN }</pre>
+                      </div>
+                      <h4><Button link={this.props.value.link} className="btn-dark px-3 py-1">Acesse<i className="fas"></i></Button></h4>
+                      { this.props.value.skills.length > 0 &&
+                        <div>
+                          <h6><Trans i18nKey='Portfolio.technologies'></Trans></h6>
+                          <ul className="list-inline">
+                            { this.props.value.skills.map((value, key) =>
+                              <li key={key} className="list-inline-item font-weight-bold"><i className="fas fa-check mr-2"></i>{value.name}</li>
+                            )}
+                          </ul>
+                        </div>
+                      }
+                    </div>
+                  </div>
                 </div>
-              }
+              </div>
             </div>
           </div>
         </div>
@@ -82,8 +87,8 @@ class Counter extends React.Component {
   }
 
   render(){
-    let time = this.props.delay ? this.props.delay+1 : 0
-    const delay = '.'+(time)+'s'
+    let time = this.props.delay ? this.props.delay/10 : 0
+    const delay = time+'s'
     return (
       <div className="col-md-4 col-sm-6 col-12 text-center wow fadeIn" data-wow-delay={delay}>
         <h1 className="text-light font-weight-normal">{ this.props.number }</h1>

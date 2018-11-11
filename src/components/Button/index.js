@@ -10,6 +10,7 @@ class Button extends React.Component {
           className={`btn rounded-0 text-uppercase font-weight-semi-bold ${ this.props.className }`}
           href={ this.props.link }
           role="button"
+          target="_blank"
         >{ this.props.children }</a>
       )
     }else{
