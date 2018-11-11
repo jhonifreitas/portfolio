@@ -9,6 +9,15 @@ class Top extends React.Component {
 
   render() {
     const mobile = (window.innerWidth < 992) ? true : false
+    let cv = '#'
+    if (this.props.value) {
+      cv = process.env.REACT_APP_API_URL
+      if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
+        cv += this.props.value.CV_PT.url
+      }else{
+        cv += this.props.value.CV_EN.url
+      }
+    }
     return (
       <section id="Top">
         <div className="container">
@@ -36,7 +45,7 @@ class Top extends React.Component {
                         to="About"
                         smooth={true}
                         duration={900}
-                        href="#"
+                        href={cv}
                   >
                     { this.props.t('Top.hire_me') }
                   </Link>
