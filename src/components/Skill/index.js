@@ -19,7 +19,7 @@ class Item extends React.Component {
     let time = this.props.delay ? this.props.delay+1 : 0
     const delay = '.'+(time)+'s'
     return (
-      <div className={`col-md-4 col-sm-6 col-12 ${(mobile) ? 'mb-3' : ''}`}>
+      <div className={`col-md-4 col-sm-6 col-12 ${(mobile) ? 'mb-3' : 'mb-4'}`}>
         <div className="skills wow fadeInRight" data-wow-delay={delay}>
           <h4>{ this.props.value.name }</h4>
           <div className="progress rounded-0">
