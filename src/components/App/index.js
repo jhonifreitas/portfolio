@@ -10,8 +10,11 @@ import Service from '../Service'
 import Portfolio from '../Portfolio'
 import Footer from '../Footer'
 
+const API_URL = 'https://jf-portfolio.herokuapp.com'
 
 class App extends React.Component {
+
+  static API_URL = API_URL
 
   state = {
     profile: null,
@@ -25,15 +28,15 @@ class App extends React.Component {
       live: false
     }).init();
 
-    this.callApi('/profile?active=true')
+    this.callApi(API_URL+'/profile?active=true')
       .then(res => this.setState({ profile: res[0] }))
       .catch(err => console.log(err));
 
-    this.callApi('/skill')
+    this.callApi(API_URL+'/skill')
       .then(res => this.setState({ skills: res }))
       .catch(err => console.log(err));
 
-    this.callApi('/service')
+    this.callApi(API_URL+'/service')
       .then(res => this.setState({ services: res }))
       .catch(err => console.log(err));
   }

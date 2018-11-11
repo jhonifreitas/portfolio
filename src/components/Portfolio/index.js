@@ -3,6 +3,7 @@ import './styles.scss'
 import WOW from 'wowjs'
 import { translate, Trans } from 'react-i18next'
 
+import App from '../App'
 import Title from '../Title'
 import Button from '../Button'
 
@@ -104,12 +105,11 @@ class Portfolio extends React.Component {
   componentDidMount() {
 
     this.loadProjects()
-
-    this.callApi('/project/count')
+    this.callApi(App.API_URL+'/project/count')
       .then(res => this.setState({ total_projects: res }))
       .catch(err => console.log(err));
 
-    this.callApi('/company/count')
+    this.callApi(App.API_URL+'/company/count')
       .then(res => this.setState({ total_companys: res }))
       .catch(err => console.log(err));
   }
@@ -122,7 +122,7 @@ class Portfolio extends React.Component {
   };
 
   loadProjects(){
-    this.callApi('/project?_limit='+this.state.limit)
+    this.callApi(App.API_URL+'/project?_limit='+this.state.limit)
       .then(res => {
         this.setState({ projects: res })
         this.setState({ limit: this.state.limit+9 });

@@ -1,6 +1,8 @@
 import React from 'react'
 import './styles.scss'
 
+import App from '../App'
+
 class Item extends React.Component {
   render() {
     return(
@@ -20,7 +22,7 @@ class Social extends React.Component {
   };
 
   componentDidMount() {
-    this.callApi('/social')
+    this.callApi(App.API_URL+'/social')
       .then(res => this.setState({ values: res }))
       .catch(err => console.log(err));
   }

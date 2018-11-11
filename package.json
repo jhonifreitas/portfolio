@@ -1,7 +1,6 @@
 {
   "name": "my-portfolio",
   "version": "0.1.0",
-  "proxy": "https://jf-portfolio.herokuapp.com/",
   "homepage": "https://jhonifreitas.github.io/my-portfolio",
   "private": true,
   "dependencies": {
@@ -59,7 +58,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
