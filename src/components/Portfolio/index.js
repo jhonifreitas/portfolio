@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles.scss'
 import WOW from 'wowjs'
+import Slider from "react-slick";
 import { translate, Trans } from 'react-i18next'
 
 import Title from '../Title'
@@ -16,50 +17,65 @@ class Item extends React.Component {
 
   render(){
     let type = this.props.value.type
+    let icon = 'fa-desktop'
     let time = this.props.delay ? this.props.delay/10 : 0
     const delay = time+'s'
 
     if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
-      if (this.props.value.type === 'mobile') {type = 'aplicativo'}
+      if (this.props.value.type === 'mobile') {type = 'aplicativo'; icon = 'phone'}
       else if (this.props.value.type === 'website') {type = 'site'}
       else if(this.props.value.type === 'system'){type = 'sistema'}
     }
 
+    const options = {
+      dots: false,
+      arrows: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+    }
+
     return (
-      <div className="col-md-4 col-sm-6 col-12 mb-4 wow pulse" data-wow-delay={delay}>
-        <div className="project row" data-toggle="modal" data-target={"#project-"+this.props.delay}>
-          <div className="col-md-12">
-            <div className="image-info position-relative">
-              <img src={ process.env.REACT_APP_API_URL+this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
-              <div className="info text-light px-4 py-2">
-                <i className="fas fa-desktop h5 mb-0 mr-2"></i>
-                <span className="text-capitalize">{type}</span>
-                <h4 className="font-weight-bold">{ this.props.value.name }</h4>
-              </div>
+      <div className="col-md-3 col-sm-4 col-6 mb-4 wow pulse" data-wow-delay={delay}>
+        <div className="project h-100" data-toggle="modal" data-target={"#project-"+this.props.delay}>
+          <div className="image-info position-relative h-100">
+            <img src={ process.env.REACT_APP_API_URL+this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
+            <div className="info text-light px-4 py-3">
+              <i className={"fas "+icon+" h5 mb-0 mr-2"}></i>
+              <span className="text-capitalize">{type}</span>
+              <h4 className="font-weight-bold mb-0">{ this.props.value.name }</h4>
             </div>
           </div>
         </div>
         <div className="modal fade" id={"project-"+this.props.delay} tabIndex="-1" role="dialog" aria-hidden="true">
-          <div className="modal-dialog modal-lg" role="document">
-            <div className="modal-content">
+          <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div className="modal-content rounded-0">
               <div className="modal-body">
-                <div className="row">
+                <div className="row align-items-center">
                   <div className="col-md-4">
-                    <img src={ process.env.REACT_APP_API_URL+this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
+                    <Slider {...options}>
+                      { this.props.value.images.map((value, key) =>
+                        <div key={key} className="item">
+                          <img src={ process.env.REACT_APP_API_URL+value.url } className="img-fluid" alt={ this.props.value.name } title={ this.props.value.name } />
+                        </div>
+                      )}
+                    </Slider>
                   </div>
                   <div className="col-md-8">
-                    <div className="all-info p-5">
-                      <h2 className="font-weight-bold">{ this.props.value.name }</h2>
-                      <h4 className="text-capitalize">{type}</h4>
+                    <div className="all-info py-3">
+                      <div className="d-flex align-items-center justify-content-between">
+                        <h2 className="font-weight-bold">{ this.props.value.name }</h2>
+                        <Button link={this.props.value.link} className="btn-dark px-3 py-1">Acesse<i className="fas"></i></Button>
+                      </div>
+                      <h4 className="text-capitalize"><i className={"fas "+icon+" h5 mb-0 mr-2"}></i>{type}</h4>
                       { this.props.value.company && <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4> }
                       <div className="mt-4">
                         <pre className="h6">{ this.props.lng === 'pt-BR' || this.props.lng === 'pt' ? this.props.value.description_PT : this.props.value.description_EN }</pre>
                       </div>
-                      <h4><Button link={this.props.value.link} className="btn-dark px-3 py-1">Acesse<i className="fas"></i></Button></h4>
                       { this.props.value.skills.length > 0 &&
                         <div>
                           <h6><Trans i18nKey='Portfolio.technologies'></Trans></h6>
-                          <ul className="list-inline">
+                          <ul className="list-inline mb-0">
                             { this.props.value.skills.map((value, key) =>
                               <li key={key} className="list-inline-item font-weight-bold"><i className="fas fa-check mr-2"></i>{value.name}</li>
                             )}
