@@ -17,14 +17,15 @@ class Item extends React.Component {
 
   render(){
     let type = this.props.value.type
-    let icon = 'fa-desktop'
+    let icon = 'fas fa-desktop'
     let time = this.props.delay ? this.props.delay/10 : 0
     const delay = time+'s'
 
     if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
-      if (this.props.value.type === 'mobile') {type = 'aplicativo'; icon = 'phone'}
+      if (this.props.value.type === 'mobile') {type = 'aplicativo'; icon = 'fas fa-mobile-alt'}
       else if (this.props.value.type === 'website') {type = 'site'}
-      else if(this.props.value.type === 'system'){type = 'sistema'}
+      else if (this.props.value.type === 'e-commerce') {type = 'site de vendas'; icon = 'fas fa-shopping-cart'}
+      else if(this.props.value.type === 'system'){type = 'sistema'; icon = 'fas fa-laptop-code'}
     }
 
     const options = {
@@ -41,7 +42,7 @@ class Item extends React.Component {
           <div className="image-info position-relative h-100">
             <img src={ this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
             <div className="info text-light px-4 py-3">
-              <i className={"fas "+icon+" h5 mb-0 mr-2"}></i>
+              <i className={icon+" h5 mb-0 mr-2"}></i>
               <span className="text-capitalize">{type}</span>
               <h4 className="font-weight-bold mb-0">{ this.props.value.name }</h4>
             </div>
@@ -65,9 +66,9 @@ class Item extends React.Component {
                     <div className="all-info py-3">
                       <div className="d-flex align-items-center justify-content-between">
                         <h2 className="font-weight-bold">{ this.props.value.name }</h2>
-                        <Button link={this.props.value.link} className="btn-dark px-3 py-1">Acesse<i className="fas"></i></Button>
+                        <Button link={this.props.value.link} className="btn-dark px-3 py-1">Acesse</Button>
                       </div>
-                      <h4 className="text-capitalize"><i className={"fas "+icon+" h5 mb-0 mr-2"}></i>{type}</h4>
+                      <h4 className="text-capitalize"><i className={icon+" h5 mb-0 mr-2"}></i>{type}</h4>
                       { this.props.value.company && <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4> }
                       <div className="mt-4">
                         <pre className="h6">{ this.props.lng === 'pt-BR' || this.props.lng === 'pt' ? this.props.value.description_PT : this.props.value.description_EN }</pre>
