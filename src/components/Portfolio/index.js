@@ -144,7 +144,7 @@ class Portfolio extends React.Component {
   };
 
   loadProjects(){
-    this.callApi(process.env.REACT_APP_API_URL+'/project?_limit='+this.state.limit)
+    this.callApi(process.env.REACT_APP_API_URL+'/project?_limit='+this.state.limit+'&_sort=createdAt:desc')
       .then(res => {
         this.setState({ projects: res })
         this.setState({ limit: this.state.limit+9 });
