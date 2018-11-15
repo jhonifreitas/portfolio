@@ -39,7 +39,7 @@ class Item extends React.Component {
       <div className="col-md-3 col-sm-4 col-6 mb-4 wow pulse" data-wow-delay={delay}>
         <div className="project h-100" data-toggle="modal" data-target={"#project-"+this.props.delay}>
           <div className="image-info position-relative h-100">
-            <img src={ process.env.REACT_APP_API_URL+this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
+            <img src={ this.props.value.featured_image.url } className="w-100" alt={ this.props.value.name } title={ this.props.value.name } />
             <div className="info text-light px-4 py-3">
               <i className={"fas "+icon+" h5 mb-0 mr-2"}></i>
               <span className="text-capitalize">{type}</span>
@@ -56,7 +56,7 @@ class Item extends React.Component {
                     <Slider {...options}>
                       { this.props.value.images.map((value, key) =>
                         <div key={key} className="item">
-                          <img src={ process.env.REACT_APP_API_URL+value.url } className="img-fluid" alt={ this.props.value.name } title={ this.props.value.name } />
+                          <img src={ value.url } className="img-fluid" alt={ this.props.value.name } title={ this.props.value.name } />
                         </div>
                       )}
                     </Slider>

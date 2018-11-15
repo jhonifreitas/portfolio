@@ -11,11 +11,10 @@ class Top extends React.Component {
     const mobile = (window.innerWidth < 992) ? true : false
     let cv = '#'
     if (this.props.value) {
-      cv = process.env.REACT_APP_API_URL
       if (this.props.lng === 'pt-BR' || this.props.lng === 'pt') {
-        cv += this.props.value.CV_PT.url
+        cv = this.props.value.CV_PT.url
       }else{
-        cv += this.props.value.CV_EN.url
+        cv = this.props.value.CV_EN.url
       }
     }
     return (
@@ -24,14 +23,14 @@ class Top extends React.Component {
 
           <div className="box-left d-none d-md-block wow fadeInLeft"></div>
           <div className="box-right d-none d-md-block wow fadeInRight">
-            <img src={ this.props.value ? process.env.REACT_APP_API_URL+this.props.value.photo.url : '' } className="w-100 h-100 img-cover" alt="" title="Photo" />
+            <img src={ this.props.value ? this.props.value.photo.url : '' } className="w-100 h-100 img-cover" alt="" title="Photo" />
           </div>
 
           <div className="row">
             <div className="col-md-6 align-self-center">
               <div className="px-3 wow fadeIn">
                 <div className="text-center d-md-none mb-3">
-                  <img src={ this.props.value ? process.env.REACT_APP_API_URL+this.props.value.photo.url : '' } className="rounded-circle w-50 wow pulse" alt="" title="Photo" />
+                  <img src={ this.props.value ? this.props.value.photo.url : '' } className="rounded-circle w-50 wow pulse" alt="" title="Photo" />
                 </div>
                 <h1 className="mb-0 font-weight-bold">{ this.props.value ? this.props.value.name : '' }</h1>
                 { this.props.value &&
