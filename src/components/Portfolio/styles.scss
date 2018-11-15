@@ -34,11 +34,14 @@
 				}
 		    }
 		}
-	}
-	.slick-initialized .slick-slide{
+	} .slick-initialized .slick-slide{
 		display: inline-block;
 	    vertical-align: middle;
 	    float: none;
+	} .close{
+		position: absolute;
+	    right: 5%;
+	    z-index: 999999;
 	}
 }
 #Counter {

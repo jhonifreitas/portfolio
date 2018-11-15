@@ -54,19 +54,22 @@ class Item extends React.Component {
               <div className="modal-body">
                 <div className="row align-items-center">
                   <div className="col-md-4">
+                    <button type="button" className="close d-md-none" data-dismiss="modal" aria-label="Close">
+                      <i aria-hidden="true" className="fas fa-times text-dark"></i>
+                    </button>
                     <Slider {...options}>
                       { this.props.value.images.map((value, key) =>
                         <div key={key} className="item">
-                          <img src={ value.url } className="img-fluid" alt={ this.props.value.name } title={ this.props.value.name } />
+                          <img src={ value.url } className="img-fluid mx-auto" alt={ this.props.value.name } title={ this.props.value.name } />
                         </div>
                       )}
                     </Slider>
                   </div>
                   <div className="col-md-8">
                     <div className="all-info py-3">
-                      <div className="d-flex align-items-center justify-content-between">
+                      <div className="d-md-flex align-items-center justify-content-between">
                         <h2 className="font-weight-bold">{ this.props.value.name }</h2>
-                        <Button link={this.props.value.link} className="btn-dark px-3 py-1">Acesse</Button>
+                        <Button link={this.props.value.link} className="btn-dark px-3 py-1 mb-3 mb-md-0">Acesse</Button>
                       </div>
                       <h4 className="text-capitalize"><i className={icon+" h5 mb-0 mr-2"}></i>{type}</h4>
                       { this.props.value.company && <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4> }
