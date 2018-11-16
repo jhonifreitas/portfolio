@@ -124,7 +124,7 @@ class Portfolio extends React.Component {
     projects: [],
     total_projects: 0,
     total_companys: 0,
-    limit: 9
+    limit: 8
   };
 
   componentDidMount() {
