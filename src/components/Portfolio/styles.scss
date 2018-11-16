@@ -21,7 +21,7 @@
 				bottom: 0;
 				transform: translate(0,110%);
 
-				&:before{
+				&:before {
 					content: '';
 					position: absolute;
 					top: 0;
@@ -34,14 +34,16 @@
 				}
 		    }
 		}
-	} .slick-initialized .slick-slide{
+	} .slick-initialized .slick-slide {
 		display: inline-block;
 	    vertical-align: middle;
 	    float: none;
-	} .close{
+	} .close {
 		position: absolute;
 	    right: 5%;
 	    z-index: 999999;
+	} a {
+		text-decoration: none;
 	}
 }
 #Counter {

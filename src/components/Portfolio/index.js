@@ -72,7 +72,7 @@ class Item extends React.Component {
                         <Button link={this.props.value.link} className="btn-dark px-3 py-1 mb-3 mb-md-0">Acesse</Button>
                       </div>
                       <h4 className="text-capitalize"><i className={icon+" h5 mb-0 mr-2"}></i>{type}</h4>
-                      { this.props.value.company && <h4><Trans i18nKey='Portfolio.company'></Trans>: {this.props.value.company.name}</h4> }
+                      { this.props.value.company && <h4><Trans i18nKey='Portfolio.company'></Trans>: <a href={this.props.value.company.link} className="text-dark" target="_blank">{this.props.value.company.name}</a></h4> }
                       <div className="mt-4">
                         <pre className="h6">{ this.props.lng === 'pt-BR' || this.props.lng === 'pt' ? this.props.value.description_PT : this.props.value.description_EN }</pre>
                       </div>
