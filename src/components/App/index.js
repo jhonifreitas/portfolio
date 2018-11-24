@@ -2,6 +2,7 @@ import React from 'react'
 import WOW from "wowjs"
 import './styles.scss'
 
+import Loader from '../Loader'
 import Header from '../Header'
 import Top from '../Top'
 import About from '../About'
@@ -51,13 +52,19 @@ class App extends React.Component {
     }
     return (
       <div>
-        <Header />
-        <Top value={ this.state.profile } />
-        <About value={ this.state.profile } />
-        <Skill values={ this.state.skills } />
-        <Service values={ this.state.services } />
-        <Portfolio years_experience={ years_experience } />
-        <Footer value={ this.state.profile } />
+        { this.state.profile ? (
+          <div>
+            <Header />
+            <Top value={ this.state.profile } />
+            <About value={ this.state.profile } />
+            <Skill values={ this.state.skills } />
+            <Service values={ this.state.services } />
+            <Portfolio years_experience={ years_experience } />
+            <Footer value={ this.state.profile } />
+          </div>
+        ) : (
+          <Loader />
+        )}
       </div>
     )
   }
