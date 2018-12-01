@@ -1,5 +1,4 @@
 import React from 'react'
-import WOW from "wowjs"
 import './styles.scss'
 
 import Loader from '../Loader'
@@ -20,11 +19,6 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-
-    new WOW.WOW({
-      live: false
-    }).init();
-
     this.callApi(process.env.REACT_APP_API_URL+'/profile?active=true')
       .then(res => this.setState({ profile: res[0] }))
       .catch(err => console.log(err));
@@ -52,19 +46,14 @@ class App extends React.Component {
     }
     return (
       <div>
-        { this.state.profile ? (
-          <div>
-            <Header />
-            <Top value={ this.state.profile } />
-            <About value={ this.state.profile } />
-            <Skill values={ this.state.skills } />
-            <Service values={ this.state.services } />
-            <Portfolio years_experience={ years_experience } />
-            <Footer value={ this.state.profile } />
-          </div>
-        ) : (
-          <Loader />
-        )}
+        <Loader value={ this.state.profile ? true : false } />
+        <Header />
+        <Top value={ this.state.profile } />
+        <About value={ this.state.profile } />
+        <Skill values={ this.state.skills } />
+        <Service values={ this.state.services } />
+        <Portfolio years_experience={ years_experience } />
+        <Footer value={ this.state.profile } />
       </div>
     )
   }

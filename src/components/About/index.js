@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactWOW from 'react-wow'
 import './styles.scss'
 import { translate } from 'react-i18next'
 
@@ -20,19 +21,21 @@ class About extends React.Component {
     }
     return (
       <section id="About" className="pt-8">
-        <div className="container wow fadeIn" data-wow-delay=".2s">
-          <div className="row mb-5">
-            <div className="col-md-12">
-              <Title text={ this.props.t('About.title') } />
+        <ReactWOW animation="fadeIn" delay=".2s">
+          <div className="container">
+            <div className="row mb-5">
+              <div className="col-md-12">
+                <Title text={ this.props.t('About.title') } />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-6 offset-md-3 text-center">
+                <p className="mb-5">{about}</p>
+                <Button className="px-45 btn-dark" link={cv}>{ this.props.t('About.button') }</Button>
+              </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-6 offset-md-3 text-center">
-              <p className="mb-5">{about}</p>
-              <Button className="px-45 btn-dark" link={cv}>{ this.props.t('About.button') }</Button>
-            </div>
-          </div>
-        </div>
+        </ReactWOW>
       </section>
     )
   }
