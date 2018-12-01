@@ -18,7 +18,7 @@ class Box extends React.Component {
       text = this.props.value.description_EN
     }
     return (
-      <div className={`col ${(mobile) ? 'mb-4' : ''}`}>
+      <div className={`col-md ${(mobile) ? 'mb-4' : 'col-12'}`}>
         <div className="px-4 text-center">
           <i className={`${ this.props.value.icon } fa-3x`}></i>
           <h3 className="my-3">{ title }</h3>
