@@ -2,16 +2,17 @@
 
 # My Portfolio
 
-(https://jhonifreitas.github.io/portfolio/)
+https://jhonifreitas.github.io/portfolio/
 
-## How start server?
+
+## How start server? :heavy_check_mark:
 
 ```console
 npm i
 npm start
 ```
 
-## Deploy
+## Deploy :rocket:
 
 ```console
 git fetch && git checkout dev
