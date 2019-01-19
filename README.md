@@ -5,14 +5,14 @@
 https://jhonifreitas.github.io/portfolio/
 
 
-## How start server? :heavy_check_mark:
+## How start server?
 
 ```console
 npm i
 npm start
 ```
 
-## Deploy :rocket:
+## Deploy
 
 ```console
 git fetch && git checkout dev
