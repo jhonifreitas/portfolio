@@ -2,7 +2,7 @@
 
 #Service {
 	position: relative;
-	&:before {
+	&:before, &:after {
 		content: '';
 	    position: absolute;
 	    top: 0;
@@ -14,6 +14,10 @@
 	    background-attachment: fixed;
 	    background-position: center;
 	    background-size: cover;
+	}&:after {
+		top: 50%;
+		bottom: 0;
+		background: #fafafb;
 	}
 	.card {
 		border: none;
