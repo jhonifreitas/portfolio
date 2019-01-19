@@ -1,7 +1,7 @@
 @import '../App/variables.scss';
 
 #Loader{
-  position: absolute;
+  position: fixed;
   background:$dark;
   top: 0;
   bottom: 0;
