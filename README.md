@@ -2,9 +2,14 @@
 
 # My Portfolio
 
-## Access
-
 (https://jhonifreitas.github.io/portfolio/)
+
+## How start server?
+
+```console
+npm i
+npm start
+```
 
 ## Deploy
 
