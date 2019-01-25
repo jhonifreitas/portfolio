@@ -64,7 +64,7 @@ class Item extends React.Component {
                       <div className="all-info py-3">
                         <div className="d-md-flex align-items-center justify-content-between">
                           <h2 className="font-weight-bold">{ this.props.value.name }</h2>
-                          { this.props.value.company &&
+                          { this.props.value.link &&
                             <Button link={this.props.value.link} className="btn-dark px-3 py-1 mb-3 mb-md-0">Acesse</Button>
                           }
                         </div>
