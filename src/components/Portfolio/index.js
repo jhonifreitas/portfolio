@@ -64,7 +64,9 @@ class Item extends React.Component {
                       <div className="all-info py-3">
                         <div className="d-md-flex align-items-center justify-content-between">
                           <h2 className="font-weight-bold">{ this.props.value.name }</h2>
-                          <Button link={this.props.value.link} className="btn-dark px-3 py-1 mb-3 mb-md-0">Acesse</Button>
+                          { this.props.value.company &&
+                            <Button link={this.props.value.link} className="btn-dark px-3 py-1 mb-3 mb-md-0">Acesse</Button>
+                          }
                         </div>
                         <h4 className="text-capitalize"><i className={icon+" h5 mb-0 mr-2"}></i>{type}</h4>
                         { this.props.value.company && <h4><Trans i18nKey='Portfolio.company'></Trans>: <a href={this.props.value.company.link} className="text-dark" target="_blank">{this.props.value.company.name}</a></h4> }
