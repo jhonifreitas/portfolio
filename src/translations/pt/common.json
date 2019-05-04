@@ -30,7 +30,12 @@
         "projects_delivered": "Projetos Realizados",
         "technologies": "Técnologias",
         "company": "Empresa",
-        "companys": "Empresas"
+        "companys": "Empresas",
+        "apps": "Aplicativos",
+        "websites": "Sites",
+        "ecommerces": "E-Commerces",
+        "systems": "Sistemas",
+        "all": "Todos"
     },
     "Contact": {
         "title": "Contato"

@@ -118,16 +118,13 @@ class Portfolio extends React.Component {
     projects: [],
     total_projects: 0,
     total_companys: 0,
-    limit: 8
+    limit: 8,
+    active: null
   };
 
   componentDidMount() {
 
     this.loadProjects()
-    this.callApi(process.env.REACT_APP_API_URL+'/project/count')
-      .then(res => this.setState({ total_projects: res }))
-      .catch(err => console.log(err));
-
     this.callApi(process.env.REACT_APP_API_URL+'/company/count')
       .then(res => this.setState({ total_companys: res }))
       .catch(err => console.log(err));
@@ -141,16 +138,25 @@ class Portfolio extends React.Component {
   };
 
   loadProjects(){
-    this.callApi(process.env.REACT_APP_API_URL+'/project?_limit='+this.state.limit+'&_sort=createdAt:desc')
+    let sort_type = ''
+    let sort_limit = '_limit='+this.state.limit
+    if(this.state.active){
+      sort_type = 'type_contains='+this.state.active
+      sort_limit = ''
+    }
+    this.callApi(process.env.REACT_APP_API_URL+'/project?'+sort_limit+sort_type+'&_sort=createdAt:desc')
       .then(res => {
         this.setState({ projects: res })
-        this.setState({ limit: this.state.limit+8 });
+        if(!this.state.active){this.setState({ limit: this.state.limit+8 })}
       })
+      .catch(err => console.log(err));
+    this.callApi(process.env.REACT_APP_API_URL+'/project/count?'+sort_limit+sort_type)
+      .then(res => this.setState({ total_projects: res }))
       .catch(err => console.log(err));
   }
 
-  show_more = () => {
-    this.loadProjects();
+  onFilterChange(filter){
+    this.setState({ active: filter}, () => this.loadProjects());
   }
 
   render() {
@@ -164,13 +170,40 @@ class Portfolio extends React.Component {
               </div>
             </div>
           </ReactWOW>
-          <div className="row">
+          <div className="row filter justify-content-center mb-5">
+            <ReactWOW animation="fadeIn" delay=".2s">
+              <div className="col-12 text-center mb-2 mb-md-0 col-md-auto">
+                <Button className={`px-45 btn-outline-dark ${!this.state.active ? 'active': ''}`} onClick={() => this.onFilterChange()}>{ this.props.t('Portfolio.all') }</Button>
+              </div>
+            </ReactWOW>
+            <ReactWOW animation="fadeIn" delay=".3s">
+              <div className="col-12 text-center mb-2 mb-md-0 col-md-auto">
+                <Button className={`px-45 btn-outline-dark ${this.state.active === "website" ? 'active': ''}`} onClick={() => this.onFilterChange('website')}>{ this.props.t('Portfolio.websites') }</Button>
+              </div>
+            </ReactWOW>
+            <ReactWOW animation="fadeIn" delay=".4s">
+              <div className="col-12 text-center mb-2 mb-md-0 col-md-auto">
+                <Button className={`px-45 btn-outline-dark ${this.state.active === "mobile" ? 'active': ''}`} onClick={() => this.onFilterChange('mobile')} >{ this.props.t('Portfolio.apps') }</Button>
+              </div>
+            </ReactWOW>
+            <ReactWOW animation="fadeIn" delay=".5s">
+              <div className="col-12 text-center mb-2 mb-md-0 col-md-auto">
+                <Button className={`px-45 btn-outline-dark ${this.state.active === "ecommerce" ? 'active': ''}`} onClick={() => this.onFilterChange('ecommerce')} >{ this.props.t('Portfolio.ecommerces') }</Button>
+              </div>
+            </ReactWOW>
+            <ReactWOW animation="fadeIn" delay=".6s">
+              <div className="col-12 text-center mb-2 mb-md-0 col-md-auto">
+                <Button className={`px-45 btn-outline-dark ${this.state.active === "system" ? 'active': ''}`} onClick={() => this.onFilterChange('system')} >{ this.props.t('Portfolio.systems') }</Button>
+              </div>
+            </ReactWOW>
+          </div>
+          <div className="row grid">
             { this.state.projects.map((value, key) => <Item key={key} delay={key} value={value} lng={this.props.lng} />)}
           </div>
           { this.state.projects.length < this.state.total_projects &&
             <div className="row mt-5">
               <div className="col-md-12 text-center">
-                <Button className="px-45 btn-outline-dark" onClick={this.show_more}>{ this.props.t('Portfolio.button') }</Button>
+                <Button className="px-45 btn-outline-dark" onClick={() => this.loadProjects()}>{ this.props.t('Portfolio.button') }</Button>
               </div>
             </div>
           }

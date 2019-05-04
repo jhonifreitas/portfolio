@@ -30,6 +30,7 @@
     "i18next": "^11.9.0",
     "i18next-browser-languagedetector": "^2.2.3",
     "i18next-xhr-backend": "^1.5.1",
+    "isotope-layout": "^3.0.6",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -64,7 +65,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0"
   },
   "jest": {

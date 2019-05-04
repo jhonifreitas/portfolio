@@ -10,8 +10,11 @@
 	color: $dark;
 }
 .btn-dark,
-.btn-outline-dark:hover {
-    background-color: $dark;
+.btn-outline-dark:hover,
+.btn-outline-dark:not(:disabled):not(.disabled).active,
+.btn-outline-dark:not(:disabled):not(.disabled):active,
+.show>.btn-outline-dark.dropdown-toggle {
+  background-color: $dark;
 }
 .btn.rounded-circle {
 	transition: all .2s;

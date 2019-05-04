@@ -30,7 +30,12 @@
         "projects_delivered": "Projects Delivered",
         "technologies": "Technologies",
         "company": "Company",
-        "companys": "Companys"
+        "companys": "Companys",
+        "apps": "Apps",
+        "websites": "Websites",
+        "ecommerces": "E-commerces",
+        "systems": "Systems",
+        "all": "All"
     },
     "Contact": {
         "title": "Contact"

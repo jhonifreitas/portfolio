@@ -23,7 +23,7 @@ class App extends React.Component {
       .then(res => this.setState({ profile: res[0] }))
       .catch(err => console.log(err));
 
-    this.callApi(process.env.REACT_APP_API_URL+'/skill')
+    this.callApi(process.env.REACT_APP_API_URL+'/skill?_sort=porcent:desc')
       .then(res => this.setState({ skills: res }))
       .catch(err => console.log(err));
 
@@ -45,7 +45,7 @@ class App extends React.Component {
       years_experience = '+'+this.state.profile.years_experience
     }
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <Loader value={ this.state.profile ? true : false } />
         <Header />
         <Top value={ this.state.profile } />
