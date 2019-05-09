@@ -117,14 +117,17 @@ class Portfolio extends React.Component {
   state = {
     projects: [],
     total_projects: 0,
+    total_projects_all: 0,
     total_companys: 0,
     limit: 8,
     active: null
   };
 
   componentDidMount() {
-
     this.loadProjects()
+    this.callApi(process.env.REACT_APP_API_URL+'/project/count')
+      .then(res => this.setState({ total_projects_all: res }))
+      .catch(err => console.log(err));
     this.callApi(process.env.REACT_APP_API_URL+'/company/count')
       .then(res => this.setState({ total_companys: res }))
       .catch(err => console.log(err));
@@ -141,13 +144,11 @@ class Portfolio extends React.Component {
     let sort_type = ''
     let sort_limit = '_limit='+this.state.limit
     if(this.state.active){
-      sort_type = 'type_contains='+this.state.active
-      sort_limit = ''
+      sort_type = '&type_contains='+this.state.active
     }
     this.callApi(process.env.REACT_APP_API_URL+'/project?'+sort_limit+sort_type+'&_sort=createdAt:desc')
       .then(res => {
-        this.setState({ projects: res })
-        if(!this.state.active){this.setState({ limit: this.state.limit+8 })}
+        this.setState({ projects: res, limit: this.state.limit+8 })
       })
       .catch(err => console.log(err));
     this.callApi(process.env.REACT_APP_API_URL+'/project/count?'+sort_limit+sort_type)
@@ -156,7 +157,7 @@ class Portfolio extends React.Component {
   }
 
   onFilterChange(filter){
-    this.setState({ active: filter}, () => this.loadProjects());
+    this.setState({ active: filter, limit: 8}, () => this.loadProjects());
   }
 
   render() {
@@ -188,7 +189,7 @@ class Portfolio extends React.Component {
             </ReactWOW>
             <ReactWOW animation="fadeIn" delay=".5s">
               <div className="col-12 text-center mb-2 mb-md-0 col-md-auto">
-                <Button className={`px-45 btn-outline-dark ${this.state.active === "ecommerce" ? 'active': ''}`} onClick={() => this.onFilterChange('ecommerce')} >{ this.props.t('Portfolio.ecommerces') }</Button>
+                <Button className={`px-45 btn-outline-dark ${this.state.active === "e-commerce" ? 'active': ''}`} onClick={() => this.onFilterChange('e-commerce')} >{ this.props.t('Portfolio.ecommerces') }</Button>
               </div>
             </ReactWOW>
             <ReactWOW animation="fadeIn" delay=".6s">
@@ -212,7 +213,7 @@ class Portfolio extends React.Component {
           <div className="container">
             <div className="row">
               <Counter number={this.props.years_experience} title={ this.props.t('Portfolio.year_experience') } delay={2}/>
-              <Counter number={this.state.total_projects} title={ this.props.t('Portfolio.projects_delivered') } delay={1}/>
+              <Counter number={this.state.total_projects_all} title={ this.props.t('Portfolio.projects_delivered') } delay={1}/>
               <Counter number={this.state.total_companys} title={ this.props.t('Portfolio.companys') } delay={0}/>
             </div>
           </div>
