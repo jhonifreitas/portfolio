@@ -1,6 +1,5 @@
 import React from 'react'
 import './styles.scss'
-import { Helmet } from "react-helmet";
 
 import Loader from '../Loader'
 import Header from '../Header'
@@ -47,19 +46,6 @@ class App extends React.Component {
     }
     return (
       <div style={{overflow: 'hidden'}}>
-        <Helmet>
-          <meta name="description" content={ this.state.profile ? this.state.profile.profession_EN : '' }/>
-      
-          <meta itemprop="name" content="JF - Portfolio"/>
-          <meta itemprop="description" content={ this.state.profile ? this.state.profile.profession_EN : '' }/>
-          <meta itemprop="image" content={ this.state.profile ? this.state.profile.photo.url : '' } />
-
-          <meta property="og:url" content="https://jhonifreitas.github.io/portfolio"/>
-          <meta property="og:type" content="website"/>
-          <meta property="og:title" content="JF - Portfolio"/>
-          <meta property="og:description" content={ this.state.profile ? this.state.profile.profession_EN : '' }/>
-          <meta property="og:image" content={ this.state.profile ? this.state.profile.photo.url : '' }/>
-        </Helmet>
         <Loader value={ this.state.profile ? true : false } />
         <Header />
         <Top value={ this.state.profile } />
