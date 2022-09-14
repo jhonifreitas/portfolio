@@ -1,0 +1,85 @@
+#Portfolio {
+	background-color: #fafafb;
+}
+#Portfolio * {
+  transition: all .5s ease-in-out;
+}
+
+#Portfolio .scroll-y {
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 40rem;
+}
+
+#Portfolio .project .image-info {
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+  align-items: center;
+  background-color: #FFF;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#Portfolio .project:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.19), 0 3px 12px rgba(0, 0, 0, 0.23);
+}
+#Portfolio .project:hover .info {
+  transform: translate(0, 0);
+}
+#Portfolio .project .info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(0, 100%);
+  background-color: rgba(0,0,0,.7);
+}
+
+#Portfolio .projec .info:before {
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: blur(4px);
+  position: absolute;
+  background-color: rgba(0,0,0, .7);
+}
+
+#Portfolio .slick-initialized .slick-slide {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+#Portfolio .close {
+  right: 5%;
+  z-index: 999999;
+  position: absolute;
+}
+#Portfolio a {
+  text-decoration: none;
+}
+
+#Counter {
+	padding: 5% 0;
+  margin-top: 8%;
+	position: relative;
+}
+#Counter:before {
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  background-image: url(./bg.png);
+  background-color: rgba(0,0,0,.5);
+}
+#Counter h1 {
+  font-size: 6rem;
+}

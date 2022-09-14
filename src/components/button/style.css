@@ -1,0 +1,22 @@
+.btn {
+	padding: .8rem 0;
+  box-shadow: 0px 10px 18px rgba(0,0,0,0.15);
+}
+.btn-outline-dark,
+.btn-dark:hover {
+	background-color: #FFF;
+	color: var(--dark);
+}
+.btn-dark,
+.btn-outline-dark:hover,
+.btn-outline-dark:not(:disabled):not(.disabled).active,
+.btn-outline-dark:not(:disabled):not(.disabled):active,
+.show>.btn-outline-dark.dropdown-toggle {
+  background-color: var(--dark);
+}
+.btn.rounded-circle {
+	transition: all .2s;
+}
+.btn.rounded-circle:hover {
+  transform: scale(1.1);
+}

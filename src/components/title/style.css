@@ -1,0 +1,11 @@
+.title .line > span {
+  height: 2px;
+  width: 30px;
+  display: block;
+  margin: 0 1px;
+  background-color: var(--dark);
+}
+
+.title .line > span.small{
+  width: 8px;
+}

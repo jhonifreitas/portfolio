@@ -1,0 +1,41 @@
+#Top {
+  background: linear-gradient(to right, #fff, 50%, #e1e1e1 50%);
+}
+
+#Top .row {
+  height: 100vh;
+}
+
+#Top .box-left,
+#Top .box-right {
+  position: absolute;
+  border: 20px solid #e8e8e8;
+}
+
+#Top .box-left {
+  left: 0;
+  top: 15%;
+  width: 25%;
+  height: 70%;
+  border-left: none;
+}
+
+#Top .box-right {
+  top: 25%;
+  right: 0;
+  width: 20%;
+  height: 50%;
+  border-right: none;
+  border-color: #ffffff;
+  overflow: hidden;
+}
+
+#Top .rounded-0.btn-outline-dark {
+  background-color: #FFF;
+  color: var(--dark);
+}
+
+#Top .rounded-0.btn-outline-dark:hover {
+  color: #FFF;
+  background-color: var(--dark);
+}

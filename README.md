@@ -11,9 +11,3 @@ https://jhonifreitas.github.io/portfolio/
 yarn install
 yarn start
 ```
-
-## Deploy
-
-```console
-yarn deploy
-```

@@ -1,0 +1,44 @@
+{
+  "Header": {
+    "home": "início",
+    "about": "sobre",
+    "service": "serviço",
+    "skill": "conhecimento",
+    "portfolio": "portfólio"
+  },
+  "Top": {
+    "hire_me": "Contrate-me",
+    "explore_more": "Veja mais",
+    "contact": "Contacte-me"
+  },
+  "About": {
+    "title": "Sobre",
+    "button": "Baixe meu cv"
+  },
+  "Skill": {
+    "title": "Meus Conhecimentos"
+  },
+  "Service": {
+    "title": "O que faço"
+  },
+  "Portfolio": {
+    "title": "Meus Projetos",
+    "button": "Mostrar mais",
+    "year_experience": "Anos de Experiência",
+    "projects_delivered": "Projetos Realizados",
+    "technologies": "Técnologias",
+    "company": "Empresa",
+    "companies": "Empresas",
+    "apps": "Aplicativos",
+    "websites": "Sites",
+    "ecommerces": "E-Commerces",
+    "systems": "Sistemas",
+    "all": "Todos"
+  },
+  "Contact": {
+    "title": "Contato"
+  },
+  "Footer": {
+    "all_rights": "2022. Todos os Direitos Reservados"
+  }
+}

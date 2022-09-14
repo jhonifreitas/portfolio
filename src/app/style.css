@@ -1,0 +1,78 @@
+/* VARIABLES */
+:root {
+  --dark: #212121;
+  --dark-light: #4d4d4d;
+  --gray: #959595;
+  --clouds: #ecf0f1;
+}
+
+*, pre {
+  font-family: 'Cormorant', serif;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: #ddd;
+}
+*::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+body {
+  overflow-x: hidden;
+}
+pre {
+  overflow: initial;
+  white-space: pre-line;
+}
+.img-cover {
+  object-fit: cover;
+}
+
+/* BG COLOR */
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+
+/* COLORS */
+.text-dark{
+  color: var(--dark) !important;
+}
+.text-dark-light {
+  color: var(--dark-light) !important;
+}
+.text-gray {
+  color: var(--gray) !important;
+}
+
+/* FONTS */
+.h1, h1 {
+  font-size: 3rem;
+}
+.h4, h4 {
+  font-size: 1.4rem;
+}
+
+/* FONT WEIGHT */
+.font-weight-medium {
+  font-weight: 500;
+}
+.font-weight-semi-bold {
+  font-weight: 600;
+}
+
+/* PADDING */
+.px-45 {
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+}
+.py-8,
+.pt-8 {
+  padding-top: 8rem !important;
+}
+.py-8,
+.pb-8 {
+  padding-bottom: 8rem !important;
+}
