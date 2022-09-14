@@ -1,7 +1,12 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "2.0.0",
+  "description": "Meu portfolio",
   "private": true,
+  "license": "MIT",
+  "homepage": "https://jhonifreitas.github.io/portfolio/",
+  "repository": "git@github.com:jhonifreitas/portfolio.git",
+  "author": "Jonathan Freitas <freitas.jonathan08@gmail.com>",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -24,6 +29,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
