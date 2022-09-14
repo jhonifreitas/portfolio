@@ -8,13 +8,12 @@ https://jhonifreitas.github.io/portfolio/
 ## How start server?
 
 ```console
-npm i
-npm start
+yarn install
+yarn start
 ```
 
 ## Deploy
 
 ```console
-git fetch && git checkout dev
-npm run deploy
+yarn deploy
 ```
