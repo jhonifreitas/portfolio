@@ -34,6 +34,7 @@ export default function App() {
 
     // SKILLS
     const skills = await SkillApi.getAll();
+    skills.sort((a, b) => b.percent - a.percent);
     setSkills(skills);
 
     setLoading(false);
