@@ -23,7 +23,7 @@ function Item(props: {service: ServiceModel}) {
   return (
     <div className={`col-md col-12 mb-4 mb-md-0`}>
       <div className="px-4 text-center">
-        <img src={props.service.icon} className="img-fluid" alt="" />
+        <img src={props.service.icon} className="img-fluid" width={130} alt="" />
         <h3 className="my-3">{ title }</h3>
         <p className="mb-0">{ text }</p>
       </div>
