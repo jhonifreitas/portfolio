@@ -52,9 +52,9 @@ function Item(props: {project: Project}) {
     <div className="col-md-3 col-sm-4 col-6 mb-4">
 
       {/* PROJECT */}
-      <div className="project h-100" data-toggle="modal" data-target={"#project-"+props.project.id}>
+      <div className="project" data-toggle="modal" data-target={"#project-"+props.project.id}>
         <div className="image-info position-relative h-100">
-          <img src={ image } className="w-100" alt={ props.project.name } title={ props.project.name } />
+          <img src={ image } className="w-100 h-100" alt={ props.project.name } title={ props.project.name } />
           <div className="info text-light px-4 py-3">
             <i className={icon+" h5 mb-0 mr-2"}></i>
             <span className="text-capitalize">{type}</span>
