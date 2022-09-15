@@ -6,9 +6,9 @@
 }
 
 #Portfolio .scroll-y {
-  padding: 1rem;
   overflow-y: auto;
   max-height: 40rem;
+  padding: 1rem 1rem 0 1rem;
 }
 
 #Portfolio .project .image-info {
@@ -63,7 +63,6 @@
 
 #Counter {
 	padding: 5% 0;
-  margin-top: 8%;
 	position: relative;
 }
 #Counter:before {
