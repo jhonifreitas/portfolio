@@ -128,7 +128,7 @@ function Item(props: {project: Project}) {
   );
 }
 
-function Counter(props: {title: string; number: number}) {
+function Counter(props: {title: string; number: number | string}) {
   return (
     <div className="col-md-4 col-sm-6 col-12 text-center">
       <h1 className="text-light font-weight-normal">{ props.number }</h1>
@@ -203,7 +203,7 @@ export default function Portfolio(props: {profile: Profile}) {
       <div id="Counter">
         <div className="container">
           <div className="row">
-            <Counter number={years_experience} title={ translation('Portfolio.year_experience') } />
+            <Counter number={'+'+years_experience} title={ translation('Portfolio.year_experience') } />
             <Counter number={projects.length} title={ translation('Portfolio.projects_delivered') } />
             <Counter number={companies.length} title={ translation('Portfolio.companies') } />
           </div>
