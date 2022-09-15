@@ -148,6 +148,7 @@ export default function Portfolio(props: {profile: Profile}) {
 
   useState(async () => {
     const projects = await ProjectApi.getAll();
+    projects.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
     setProjects(projects);
 
     const companies = await CompanyApi.getAll();
