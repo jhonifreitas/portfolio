@@ -6,9 +6,15 @@ import { Social as SocialModel } from '../../interfaces/social';
 import SocialApi from '../../services/apis/social.service';
 
 function Item(props: {social: SocialModel}) {
+  let link = props.social.link;
+
+  if (props.social.type === 'whatsapp') link = `https://api.whatsapp.com/send?phone=55${props.social.link}`;
+  else if (props.social.type === 'phone') link = `tel:${props.social.link}`;
+  else if (props.social.type === 'email') link = `mailto:${props.social.link}`;
+
   return(
     <li className="list-inline-item">
-      <a href={ props.social.link } className="btn btn-outline-dark rounded-circle" target="_blank" rel="noreferrer">
+      <a href={ link } className="btn btn-outline-dark rounded-circle" target="_blank" rel="noreferrer">
         {props.social.type === 'linked-in' && <i className="fab fa-linkedin-in"></i>}
         {props.social.type === 'facebook' && <i className="fab fa-facebook-f"></i>}
         {props.social.type === 'github' && <i className="fab fa-github"></i>}
